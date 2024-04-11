@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Login Caos New</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -41,12 +41,33 @@
 </head>
 <body>
     <div class="container">
-        <h2>Login</h2>
-        <form action="#" method="POST">
-            <input type="text" name="username" placeholder="Username" required>
-            <input type="password" name="password" placeholder="Password" required>
+        <h2>Login Noticias Caos New</h2>
+        <form action="http://127.0.0.1:3000/Prog%20Web%202.0/principal.html" method="POST" onsubmit="return validateForm()">
+            <input type="text" id="username" name="username" placeholder="Username" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
             <button type="submit">Login</button>
         </form>
     </div>
+
+    <script>
+        function validateForm() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // Check if username and password match
+            if (username === "caosnew" && password === "caosnew123") {
+                return true; // Allow form submission
+            } else {
+                alert("Invalid username or password");
+                return false; // Prevent form submission
+            }
+        }
+        /* La función validateForm() se ejecuta cuando se envía el formulario.
+        Dentro de esta función, se obtienen los valores ingresados por el usuario para el nombre de usuario y la contraseña utilizando document.getElementById().
+        Luego, se compara el nombre de usuario y la contraseña con los valores esperados ("caosnew" y "caosnew123" respectivamente).
+        Si ambos coinciden, la función devuelve true, lo que permite que el formulario se envíe y el usuario sea redirigido a la página principal.
+        Si los valores no coinciden, se muestra una alerta indicando que las credenciales son inválidas y la función devuelve false, lo que evita que el formulario se envíe.
+        */
+    </script>
 </body>
 </html>
