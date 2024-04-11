@@ -1,1 +1,10 @@
 /* Hoja de estilos */
+.cuerpo-contacto {
+    color: #343c44;
+    margin: 5%;
+    padding-top: 8dvb;
+}
+
+.cuerpo-contacto h3 {
+    padding: 1dvb;
+}
