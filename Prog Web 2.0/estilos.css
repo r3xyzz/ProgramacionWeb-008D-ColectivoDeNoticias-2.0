@@ -8,3 +8,7 @@
 .cuerpo-contacto h3 {
     padding: 1dvb;
 }
+
+.cuerpo-contacto p b {
+    color: #343c44;
+}
