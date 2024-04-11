@@ -3,39 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Caos New</title>
+    <title>Login Noticias Caos New</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
+            background-color: #f8f9fa;
             font-family: Arial, sans-serif;
         }
         .container {
             max-width: 400px;
             margin: 0 auto;
             padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #f9f9f9;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
         .container h2 {
             text-align: center;
+            margin-bottom: 20px;
+            color: #007bff;
         }
-        .container form {
-            display: flex;
-            flex-direction: column;
+        .form-group {
+            margin-bottom: 20px;
         }
-        .container form input {
-            margin-bottom: 10px;
+        .form-group label {
+            font-weight: bold;
+        }
+        .form-control {
             padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
+            border-radius: 5px;
+            border: 1px solid #ced4da;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
         }
-        .container form button {
-            padding: 10px;
+        .form-control:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+        }
+        .btn-primary {
+            padding: 10px 20px;
+            border-radius: 5px;
             background-color: #007bff;
-            color: #fff;
             border: none;
-            border-radius: 3px;
             cursor: pointer;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
@@ -43,11 +57,20 @@
     <div class="container">
         <h2>Login Noticias Caos New</h2>
         <form action="http://127.0.0.1:3000/Prog%20Web%202.0/principal.html" method="POST" onsubmit="return validateForm()">
-            <input type="text" id="username" name="username" placeholder="Username" required>
-            <input type="password" id="password" name="password" placeholder="Password" required>
-            <button type="submit">Login</button>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" class="form-control" placeholder="Enter username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" class="form-control" placeholder="Enter password" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
         </form>
     </div>
+
+    <!-- Bootstrap JS (optional, only if you need dropdowns, modals, etc.) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script>
         function validateForm() {
@@ -67,7 +90,28 @@
         Luego, se compara el nombre de usuario y la contraseña con los valores esperados ("caosnew" y "caosnew123" respectivamente).
         Si ambos coinciden, la función devuelve true, lo que permite que el formulario se envíe y el usuario sea redirigido a la página principal.
         Si los valores no coinciden, se muestra una alerta indicando que las credenciales son inválidas y la función devuelve false, lo que evita que el formulario se envíe.
+        
+        <div class="container">...</div>: Este es un contenedor de Bootstrap. Bootstrap es un marco de trabajo de front-end que proporciona una estructura y estilo predefinidos para crear interfaces de usuario. El contenedor ayuda a centralizar y alinear el contenido en la página.
+        <h2>Login Noticias Caos New</h2>: Este es un elemento de encabezado HTML (<h2>)
+            <form action="http://127.0.0.1:3000/Prog%20Web%202.0/principal.html" method="POST" onsubmit="return validateForm()">...</form>: Este es un formulario HTML (<form>). Tiene tres atributos importantes:
+
+            action: Este atributo especifica la URL a la que se enviarán los datos del formulario cuando se envíe. En este caso, los datos se enviarán a "http://127.0.0.1:3000/Prog%20Web%202.0/principal.html".
+            method: Este atributo especifica el método HTTP que se utilizará para enviar los datos del formulario. En este caso, se utiliza "POST".
+            onsubmit: Este atributo especifica la acción que se llevará a cabo cuando se envíe el formulario. En este caso, se llama a la función validateForm() para validar los campos del formulario antes de enviarlos.
+        
+        <input type="text" id="username" name="username" placeholder="Username" required>: Este es un campo de entrada de texto HTML (<input>). Tiene varios atributos:
+
+        type: Este atributo especifica el tipo de entrada, que en este caso es "text".
+        id: Este atributo proporciona un identificador único para el campo. Se utiliza para asociar el campo con etiquetas de <label> o para acceder al valor del campo mediante JavaScript.
+        name: Este atributo especifica el nombre del campo. Se utiliza cuando se envía el formulario para identificar el valor del campo.
+        placeholder: Este atributo proporciona un texto de marcador de posición que se muestra en el campo cuando está vacío.
+        required: Este atributo indica que el campo es obligatorio y no se puede enviar el formulario si está vacío.
+           
+        <input type="password" id="password" name="password" placeholder="Password" required>: Este es un campo de entrada de contraseña HTML similar al campo de texto, pero está diseñado para ocultar los caracteres ingresados. Tiene atributos similares al campo de texto.
+
+        <button type="submit">Login</button>: Este es un botón de envío HTML (<button>). Cuando se hace clic en este botón dentro del formulario, el formulario se envía al destino especificado en el atributo action.
         */
     </script>
+
 </body>
 </html>
