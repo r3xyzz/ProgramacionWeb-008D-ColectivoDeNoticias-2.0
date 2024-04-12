@@ -1,1 +1,36 @@
 /* Hoja de estilos */
+.cuerpo-contacto {
+    color: #343c44;
+    margin: 5%;
+    padding-top: 8dvb;
+}
+
+.cuerpo-contacto h3 {
+    padding: 1dvb;
+}
+
+.cuerpo-contacto p b {
+    color: #343c44;
+}
+
+.cuerpo-noticia {
+    color: #343c44;
+    margin: 3%;
+    margin-right: 6%;
+}
+
+.imagen-circular {
+    margin-right: 10px;
+    border-radius: 50%;
+    height:30px;
+}
+
+.imagen-noticia {
+    max-width: 100%;
+    height: auto;
+}
+
+.imagen-noticia img {
+    width: 100%; 
+    height: auto;
+}
