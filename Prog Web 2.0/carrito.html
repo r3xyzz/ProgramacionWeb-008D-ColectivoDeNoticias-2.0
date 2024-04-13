@@ -1,4 +1,5 @@
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -9,12 +10,14 @@
 
     </style>
 </head>
+
 <body>
     <header>
         <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="#">Colectivos de Noticias</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -34,17 +37,221 @@
             </div>
         </nav>
     </header>
-    <footer class="bg-dark text-light mt-5">
-        <div class="container py-4">
-            <div class="row">
-                <div class="col-md-6">
-                    <p>&copy; 2024 Noticias y Reportajes</p>
+    <div class="container mt-5">
+        <br>
+        <div class="row">
+            <!-- Columna izquierda para los datos de compra -->
+            <div class="col-md-6">
+                <h3>Datos de Compra</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="nombre">Nombre en la Tarjeta</label>
+                        <input type="text" class="form-control" id="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="numero">Número de Tarjeta</label>
+                        <input type="text" class="form-control" id="numero" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="expiracion">Fecha de Expiración</label>
+                            <input type="date" class="form-control" id="expiracion" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="codigo">Código de Seguridad (CVV)</label>
+                            <input type="text" class="form-control" id="codigo" required maxlength="3">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="direccion">Dirección de Envío</label>
+                        <textarea class="form-control" id="direccion" rows="3" required></textarea>
+                    </div>
+                </form>
+            </div>
+            <!-- Columna central para elegir la suscripción y otras opciones -->
+            <div class="col-md-1 border-right"></div>
+            <div class="col-md-5">
+                <h3>Elegir Subscripción</h3>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="subscripcion" id="mensual" value="3600">
+                    <label class="form-check-label" for="mensual">
+                        Subscripción Mensual
+                    </label>
                 </div>
-                <div class="col-md-6 text-right">
-                    <p>Contacto: colectivosnoricias@gmail.com</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="subscripcion" id="anual" value="36720">
+                    <label class="form-check-label" for="anual">
+                        Subscripción Anual <b>(15% de descuento)</b>
+                    </label>
+                </div>
+                <br>
+                <h3>También te puede interesar</h3>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="periodicos" value="6000">
+                    <label class="form-check-label" for="periodicos">
+                        Recibir Periódicos a Domicilio
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="informacion" value="0">
+                    <label class="form-check-label" for="informacion">
+                        Recibir Información por Correo
+                    </label>
+                </div>
+                <hr>
+                <br>
+                <br>
+
+                <!-- Sección del carrito de compras -->
+                <h3>Carrito de Compras</h3>
+                <ul id="carrito" class="list-group">
+                    <!-- Aquí se agregarán los elementos del carrito dinámicamente -->
+                </ul>
+                <p id="total">Total: $0</p>
+                <!-- Botón de pagar, inicialmente deshabilitado -->
+                <button id="comprarBtn" class="btn btn-primary" data-toggle="modal" data-target="#modalCompra"
+                    disabled>Pagar</button>
+                <!-- Modal -->
+                <div class="modal fade" id="modalCompra" tabindex="-1" role="dialog" aria-labelledby="modalCompraTitle"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modalCompraTitle">Detalle de la Compra</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>¡Gracias por tu compra!</p>
+                                <p>Nombre: <span id="nombreModal"></span></p>
+                                <p>Suscripción: <span id="suscripcionModal"></span></p>
+                                <p>Total: <span id="totalModal"></span></p>
+                                <p>¡Disfruta de tu suscripción!</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </footer>
+    </div>
+    <script>
+        // Event listener para checkboxes
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(function (checkbox) {
+            checkbox.addEventListener('change', function () {
+                // Llama a la función para actualizar el carrito y verificar la compra
+                actualizarCarrito();
+                verificarCompra();
+            });
+        });
+
+        // Event listener para botones radiales de suscripción
+        const radios = document.querySelectorAll('input[type="radio"][name="subscripcion"]');
+        radios.forEach(function (radio) {
+            radio.addEventListener('change', function () {
+                // Llama a la función para actualizar el carrito y verificar la compra
+                actualizarCarrito();
+                verificarCompra();
+            });
+        });
+
+        // Event listener para campos de datos de pago
+        const camposPago = document.querySelectorAll('input[type="text"]');
+        camposPago.forEach(function (input) {
+            input.addEventListener('input', function () {
+                // Llama a la función para verificar la compra
+                verificarCompra();
+            });
+        });
+
+        // Función para actualizar el carrito de compras
+        function actualizarCarrito() {
+            const productosSeleccionados = [];
+            let total = 0;
+
+            // Obtener productos seleccionados y calcular total
+            checkboxes.forEach(function (checkbox) {
+                if (checkbox.checked) {
+                    // Obtiene el nombre del producto y su precio
+                    const producto = checkbox.labels[0].innerText;
+                    const precio = parseFloat(checkbox.value);
+                    total += precio;
+                    // Agrega el producto al array de productos seleccionados
+                    productosSeleccionados.push(`${producto} - $${(precio / 1000).toFixed(0)}.000`);
+                }
+            });
+
+            // Obtener la suscripción seleccionada y calcular el total
+            radios.forEach(function (radio) {
+                if (radio.checked) {
+                    // Obtiene el nombre de la suscripción y su precio
+                    const subscripcion = radio.labels[0].innerText;
+                    const precio = parseFloat(radio.value);
+                    total += precio;
+                    // Agrega la suscripción al array de productos seleccionados
+                    productosSeleccionados.push(`${subscripcion} - $${(precio / 1000).toFixed(0)}.000`);
+                }
+            });
+
+            // Actualizar lista de productos en el carrito
+            const carrito = document.getElementById('carrito');
+            carrito.innerHTML = '';
+            productosSeleccionados.forEach(function (producto) {
+                // Crea un elemento de lista para cada producto y lo agrega al carrito
+                const li = document.createElement('li');
+                li.className = 'list-group-item';
+                li.textContent = producto;
+                carrito.appendChild(li);
+            });
+
+            // Actualizar total
+            const totalElement = document.getElementById('total');
+            totalElement.textContent = `Total: $${(total / 1000).toFixed(0)}.000`;
+        }
+
+        // Función para verificar si se puede proceder con la compra
+        function verificarCompra() {
+            // Obtener valores de los campos de datos de pago
+            const nombre = document.getElementById('nombre').value;
+            const tarjeta = document.getElementById('numero').value;
+            const expiracion = document.getElementById('expiracion').value;
+            const codigo = document.getElementById('codigo').value;
+            const direccion = document.getElementById('direccion').value;
+            // Verificar si se ha seleccionado una suscripción
+            const subscripcionMensual = document.getElementById('mensual').checked;
+            const subscripcionAnual = document.getElementById('anual').checked;
+            const subscripcionSeleccionada = subscripcionMensual || subscripcionAnual;
+            // Verificar si todos los campos de datos de pago están completos
+            const camposCompletos = nombre && tarjeta && expiracion && codigo && direccion;
+            // Habilitar el botón de compra si todos los campos están completos y se ha seleccionado una suscripción
+            const botonCompra = document.getElementById('comprarBtn');
+            botonCompra.disabled = !(camposCompletos && subscripcionSeleccionada);
+        }
+        // Event listener para el botón de Comprar
+        const comprarBtn = document.getElementById('comprarBtn');
+        comprarBtn.addEventListener('click', function () {
+            const nombre = document.getElementById('nombre').value;
+            const suscripcion = document.querySelector('input[name="subscripcion"]:checked').nextElementSibling.textContent;
+            const total = document.getElementById('total').textContent;
+
+            // Mostrar detalles en el modal
+            document.getElementById('nombreModal').textContent = nombre;
+            document.getElementById('suscripcionModal').textContent = suscripcion;
+            document.getElementById('totalModal').textContent = total;
+
+            // Mostrar el modal
+            document.getElementById('modalCompra').classList.add('show');
+            document.getElementById('modalCompra').style.display = 'block';
+        });
+        // Event listener para cerrar el modal al hacer clic en la "x"
+        const closeModalButton = document.querySelector('[data-dismiss="modal"]');
+        closeModalButton.addEventListener('click', function () {
+            const modal = document.getElementById('modalCompra');
+            modal.classList.remove('show');
+            modal.style.display = 'none';
+        });
+    </script>
 </body>
+
 </html>
