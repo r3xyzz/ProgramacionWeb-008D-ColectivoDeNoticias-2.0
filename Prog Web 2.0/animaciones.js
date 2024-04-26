@@ -1,10 +1,11 @@
 // Hoja de JavaScript
 
-// Referencia al modal utilizando la ID
-var modal= document.getElementById('miModal');
+// Implemetear Js con JQuery para tener las validaciones
 
-// Abertura del modal
-$('#miModal').modal('show')
+$(document).ready(function(){
 
-// Cierre del modal
-$('#miModal').modal('hide')
+ // Una vez listo el document.ready implementar todo codigo o logica dentro
+
+
+
+});
