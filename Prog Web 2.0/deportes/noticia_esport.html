@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latinoamérica contra Corea</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!--a implementar cosas únicas de la página :-3-->
+    <style>
+        #subtitulo-img{
+            font-size:small;
+            text-align: center;
+        }
+        #fecha{
+            display:inline;
+            font-size:small;
+            color:grey;
+        }
+        .imagen-circular{
+            margin-right: 10px;
+            border-radius: 50%;
+            height:30px;
+        }
+        #autor-noticia{
+            display:inline;
+            float:right;
+        }
+        #articulo-noticia{
+            margin-top: 80px;
+            margin-left: 10%;
+            max-width: 80%;
+            position:right;
+        }
+        #img-noticia{
+            width: 100%;
+            min-height: 150px;
+        }
+        #img-card{
+            width: auto;
+            height: 300px;
+        }
+
+            
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="http://127.0.0.1:3000/Prog Web 2.0/principal.html">Colectivos de Noticias</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="http://127.0.0.1:3000/Prog Web 2.0/principal.html">Inicio</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Noticias
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="http://127.0.0.1:3000/Prog Web 2.0/deportes/noticia_furbo.html">Deportes</a>
+                            <a class="dropdown-item" href="http://127.0.0.1:3000/Prog Web 2.0/internacional/noticia_incendio.html">Internacional</a>
+                            <a class="dropdown-item" href="http://127.0.0.1:3000/Prog Web 2.0/nacional/noticia_carabinero.html">Nacional</a>
+                            <a class="dropdown-item" href="http://127.0.0.1:3000/Prog Web 2.0/politica/noticia_gobierno.html">Política</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://127.0.0.1:3000/Prog Web 2.0/contacto.html">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://127.0.0.1:3000/Prog Web 2.0/carrito.html">Suscripción</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--NOTICIA-->
+    <div class="container" id="articulo-noticia">
+        <div id="articulo-noticia">
+            <!--Fecha, ubicación y autor-->
+            <p id="fecha">28/04/2024 - Chile</p>
+            <div id="autor-noticia">
+                <img class="imagen-circular" alt="Foto de Autor de Noticia" src="https://square-vn.com/app/dscms/assets/images/person-2.jpg">
+                <p id ="fecha">Hecho por:</p>
+                <span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="LAURA DONOSO ha hecho 3 artículos en total">
+                    <a id="fecha" href="Autor-Laura">Laura Donoso</a>
+                </span>
+            </div>
+            <!--Título y Subtítulo-->
+            <h3>El Split incial del MSI abrira Latinoamérica contra Corea</h3>
+            <h6>Estral E-Sports termina eliminado: Una buena ofensiva de parte de Corea deja fuera a Latinoamérica</h6>
+            <hr>
+            <!--Imagen Noticia y Cuerpo-->
+            <img class="img-fluid" id="img-noticia" src="..\imagenes\GLnJRKiXoAA5ZtB.jpg">
+            <p id="subtitulo-img">Esperanza y desafíos: Estral Esports experimentó su primer contratiempo al enfrentarse al formidable equipo T1, que es el actual campeón mundial de LoL.</p>
+            <p>Estral perdió ante T1. La noticia no sorprende. Se trata del mejor equipo de la historia en League of Legends, cuatro veces campeón mundial y ganador del último Worlds. Sin embargo, fue otro tipo de derrota para Latinoamérica. A diferencia de lo ocurrido en la mayoría de los torneos internacionales, el representante de la región terminó con la cabeza en alto.</p>
+            <p>Por la primera jornada del Grupo A del Mid Season Invitational 2024, que se disputa en China con los mejores equipos del planeta, el conjunto de los argentinos Josedeodo, Ackerman y Snaker, junto a los chilenos Zothve y Cody, cayó por 2-0 y ahora tendrá la chance de seguir con vida por el lower bracket, donde se medirá con los taiwaneses de PSG Talon.</p>
+            <p>El elenco de origen mexicano salió a jugar sin temor ante Faker y compañía y, más allá de estar casi siempre en desventaja desde los objetivos y en el oro, hizo fuerza en las batallas por equipo e incluso se impuso en varios mano a mano. Pero sobre todo, dejó una excelente imagen desde las mecánicas, donde se destacaron Cody y Josedeodo.</p>
+            <p>“Queríamos jugarles sin miedo y sin respetarlos. Hicimos bien el juego temprano, pero nos sacaron mucho oro. No nos importó que sea T1. La gente creía que íbamos a perder fácil, pero salimos a jugar de igual a igual. En el segundo mapa jugamos mejor”, señaló el jungla argentino una vez concluida la batalla.</p>
+            <p>Sin dudas, el segundo duelo fue más parejo. Incluso hasta el minuto 24, Estral tuvo chances de estirar las acciones y hasta poner en aprietos a los surcoreanos, que en ese momento lograron cuatro bajas importantes y sentenciaron la historia. El campeón de Latam incluso se defendió muy bien cuando quisieron cerrarlo rápidamente después de ese duelo.</p>
+            <p>“Nos dimos cuenta que somos buenos y que podemos ganarle a cualquiera. Contra PSG va a ser más fácil. Estoy muy ansioso de jugar contra ellos. Creemos que le podemos ganar. Gracias a la gente por el apoyo”, sentenció Josedeodo.</p>
+            
+            <hr>
+            <!--CATEGORÍAS-->
+            <p id="fecha">Categoría:</p>
+            <a id="fecha" href="Categoria-Deporte">Deporte</a>
+            <hr>
+            
+            <!--NOTICIAS RELEVANTES (falta configurar el size de las img para q todo sea uniforme lel)-->
+            <div>
+                <h3>Noticias relevantes</h3>
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                    <div class="col">
+                      <div class="card">
+                        <img id="img-card" src="..\imagenes\noticia_carabinero.png" class="card-img-top" alt="Noticia">
+                        <div class="card-body">
+                            <a href="..\nacional\noticia_carabinero.html" style="color:black"><h5 class="card-title">Amenazas tras arresto de venezolanos en Quinta Normal</h5></a>
+                          <p class="card-text">Amenazas tras arresto de venezolanos en Quinta Normal desatan tensión. Carabineros intensifican seguridad. Arrestados vinculados al homicidio del teniente Emmanuel Sánchez. Indignación en redes sociales.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card">
+                        <img id="img-card" src="../imagenes\noticia_prestamo.jpg" class="card-img-top" alt="Noticia">
+                        <div class="card-body">
+                            <a href="..\nacional\noticia_prestamo.html" style="color:black"><h5 class="card-title">El Préstamo Solidario durante la pandemia del Covid-19</h5></a>
+                          <p class="card-text">Este, en respuesta estatal a la pandemia, sigue su pago en 2024. Consulta de deuda en el sitio web. Reembolso en cuatro cuotas ajustadas al IPC, variando según año de solicitud.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card">
+                        <img id="img-card" src="../imagenes\noticia_incendio.webp" class="card-img-top" alt="Noticia">
+                        <div class="card-body">
+                            <a href="..\internacional\noticia_incendio.html" style="color:black"><h5 class="card-title">Incendio en Kowloon, Hong Kong: Cinco Personas Muertas y Decenas de Heridos</h5></a>
+                          <p class="card-text">Un incendio en un edificio residencial en el distrito de Kowloon, Hong Kong, dejó al menos cinco muertos y 33 heridos. El fuego, de categoría tres, fue controlado por los bomberos después de una hora. </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card">
+                        <img id="img-card" src="../imagenes\Screenshot 2024-04-11 221545.png" class="card-img-top" alt="Noticia">
+                        <div class="card-body">
+                            <a href="..\nacional\noticia_mascotas.html" style="color:black"><h5 class="card-title">Nombres comunes de perros y gatos en Chile</h5></a>
+                          <p class="card-text">El proyecto de Ley Duque propone otorgar un día libre a quienes pierdan una mascota, destacando el papel significativo de los animales domésticos en las familias. Además, se reporta que hay más de dos millones y medio de perros y gatos registrados en el país.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+        
+
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light mt-5">
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2024 Noticias y Reportajes</p>
+                </div>
+                <div class="col-md-6 text-right">
+                    <p>Contacto: colectivosnoricias@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script>
+        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+            var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+            return new bootstrap.Popover(popoverTriggerEl)
+            })
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
