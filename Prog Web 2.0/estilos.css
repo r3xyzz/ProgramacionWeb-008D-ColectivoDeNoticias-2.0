@@ -35,12 +35,15 @@
     height: auto;
 }
 
+/*
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+*/
 
+/*
 nav {
     font-family: 'open sans';
     background: #34495e;
@@ -51,8 +54,10 @@ nav {
     align-items: center;
     position: fixed;
     top: 0;
-    transition: top 1.5s; /* Añadido para animación suave */
+    transition: top 1.5s; 
 }
+*/
+
 
 
 .navegacion > a {
@@ -71,4 +76,31 @@ nav {
 div.texto {
     font-size: 40px;
     margin-top: 120px;
+}
+
+
+
+.weather-card {
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    background: linear-gradient(135deg, #adabab, #666666); /* Fondo degradado de grisaceos */
+}
+.city-name {
+    font-size: 24px; /* Tamaño grande */
+}
+.temperature {
+    font-size: 40px; /* Tamaño grande */
+}
+.temperature-description {
+    font-size: 18px; /* Tamaño grande */
+}
+.temperature-range {
+    font-size: 16px; /* Tamaño grande */
+}
+.title-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px; /* Espacio entre el título y el recuadro del clima */
 }
