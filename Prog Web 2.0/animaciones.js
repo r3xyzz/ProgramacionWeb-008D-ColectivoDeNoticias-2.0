@@ -16,6 +16,27 @@ $(document).ready(function(){ //asegura que el script se ejecute en el HTML cuan
             }
             ubicacionPrincipal = Desplazamiento_Actual; //actualiza la posicion inicial con la posicion actual del desplazamiento de la pagina para que se pueda comparar con la nueva posicion del scroll
         };
+
+        //$('[data-bs-toggle="popover"]').popover({
+        //    container: 'body'
+        //});
+        $('#btnEnviar').click(function(){
+
+            var email = $('#email').val();
+            var mensaje = $('#message').val();
+            var validacionEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            if (!validacionEmail.test(email)) {
+                alert('Ingrese un correo electrónico válido');
+                return;
+            }
+
+            if (mensaje === ''){
+                alert('Complete todos los campos antes de envíar');
+            } else {
+                console.log('GOL DE COLO-COLO')
+            }
+        });
     });
 
 

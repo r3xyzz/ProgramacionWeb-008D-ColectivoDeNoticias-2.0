@@ -104,3 +104,12 @@ div.texto {
     align-items: center;
     margin-bottom: 5px; /* Espacio entre el título y el recuadro del clima */
 }
+
+.custom-popover {
+    --bs-popover-max-width: 200px;
+    --bs-popover-border-color: var(--bd-violet-bg);
+    --bs-popover-header-bg: var(--bd-violet-bg);
+    --bs-popover-header-color: var(--bs-white);
+    --bs-popover-body-padding-x: 1rem;
+    --bs-popover-body-padding-y: .5rem;
+}

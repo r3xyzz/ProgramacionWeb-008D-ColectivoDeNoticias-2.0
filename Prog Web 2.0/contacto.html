@@ -1,6 +1,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="estilos.css">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
@@ -45,7 +46,6 @@
         </div>
     </nav>
     </header>
-
     <div class="container mt-5 cuerpo-contacto">
         <h1>Comunicate con nosotros!</h1>
         <hr>
@@ -55,17 +55,18 @@
         <form id="formularioContacto">
             <div class="form-group mb-3">
                 <label for="email" class="form-label">Correo electronico:</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="Ingresa tu Email" required>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Ingresa tu Email">
             </div>
             <div class="form-group mb-3">
                 <label for="message" class="form-label">Motivo:</label>
-                <textarea class="form-control" id="message" name="message" rows="3" placeholder="Ingresa el motivo para contactarte con nosotros!"></textarea required>
+                <textarea class="form-control" id="message" name="message" rows="3" placeholder="Ingresa el motivo para contactarte con nosotros!"></textarea>
             </div>
             <div class="form-group mb-3">
                 <label for="formFile" class="form-label">Archivos adjuntos(*)</label>
                 <input class="form-control" type="file" id="formFile">
             </div>
-            <button type="submit" class="btn btn-primary">Enviar</button>
+            <button type="button" class="btn btn-primary" id="btnEnviar">Enviar</button>
+            
         </form>
     </div>
     <div class="container cuerpo-contacto">
@@ -89,8 +90,7 @@
             </div>
         </div>
     </footer>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="animaciones.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
