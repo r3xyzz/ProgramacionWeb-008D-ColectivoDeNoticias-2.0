@@ -35,4 +35,6 @@ $(document).ready(function() {
         }
     });
     
+// wate hell o no magad uei ieieiouoo
+
 });
