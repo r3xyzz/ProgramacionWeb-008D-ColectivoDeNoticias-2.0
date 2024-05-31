@@ -1,3 +1,4 @@
+$(document).ready(function() {
 function validateForm() {
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
@@ -10,6 +11,7 @@ function validateForm() {
         return false; // Prevent form submission
     }
 }
+});
 /* La función validateForm() se ejecuta cuando se envía el formulario.
 Dentro de esta función, se obtienen los valores ingresados por el usuario para el nombre de usuario y la contraseña utilizando document.getElementById().
 Luego, se compara el nombre de usuario y la contraseña con los valores esperados ("caosnew" y "caosnew123" respectivamente).
