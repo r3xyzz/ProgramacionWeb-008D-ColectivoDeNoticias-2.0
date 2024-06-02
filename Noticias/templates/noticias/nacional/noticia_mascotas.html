@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los 5 nombres más comunes de perros y gatos en Chile</title>
+    <link rel="stylesheet" href="../staticCSS/noticias.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!--a implementar cosas únicas de la página :-3-->
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Colectivos de Noticias</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Noticias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Reportajes</a>
+                    </li>
+                    <!-- Agrega más opciones de navegación según tu necesidad -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--NOTICIA-->
+    <div class="container" id="articulo-noticia">
+        <div id="articulo-noticia">
+            <!--Fecha, ubicación y autor-->
+            <p id="fecha">14/04/2024 - Chile</p>
+            <div id="autor-noticia">
+                <img class="imagen-circular" alt="Foto de Autor de Noticia" src="https://square-vn.com/app/dscms/assets/images/person-1.jpg">
+                <p id ="fecha">Hecho por:</p>
+                <span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="MAURICIO JOSE ha hecho 2 artículos en total">
+                    <a id="fecha" href="Autor-Mauricio">Mauricio Jose</a>
+                </span>
+            </div>
+            <!--Título y Subtítulo-->
+            <h3>Los 5 nombres más comunes de perros y gatos en Chile</h3>
+            <h6>Propuesta de Ley reconoce importancia de mascotas: Revelan datos sobre registro y nombres más comunes en Chile.</h6>
+            <hr>
+            <!--Imagen Noticia y Cuerpo-->
+            <img class="img-fluid" id="img-noticia" src="..\imagenes\Screenshot 2024-04-11 221545.png">
+            <p id="subtitulo-img">Proyecto de Ley Duque y datos del Registro Nacional de Mascotas evidencian la conexión emocional y la relevancia de las mascotas en la sociedad chilena.</p>
+            <p>La iniciativa de Ley Duque ha generado un debate sobre el bienestar animal y la necesidad de proteger a las mascotas en situaciones de pérdida o duelo. Además, el Registro Nacional de Mascotas no solo proporciona datos sobre la población de animales en Chile, sino que también puede ayudar a las autoridades a implementar políticas y programas para garantizar su cuidado y seguridad en el país. Esta combinación de legislación y datos es un paso importante hacia una sociedad más consciente y compasiva con respecto a los derechos de los animales.</p>
+            <p>Esta semana, en el Congreso, se presentó el proyecto de Ley Duque, una iniciativa que busca otorgar un día libre en el trabajo o en la escuela a quienes pierdan una mascota, reconociendo así su importancia como miembros de la familia. En este contexto, se destacó la relevancia de los animalitos que viven en los hogares.</p>
+            <p>El Registro Nacional de Mascotas reveló que actualmente hay más de dos millones y medio de perros y gatos oficialmente registrados en Chile. Esta cifra refleja la gran cantidad de animales que forman parte de los hogares chilenos, demostrando el profundo vínculo que existe entre las mascotas y sus dueños.</p>
+            <p>Además, se dio a conocer cuáles son los nombres más comunes tanto para perros como para gatos en el país. Encabezando la lista se encuentra el nombre "Luna", seguido de cerca por otros nombres populares como "Max", "Lola" y "Bella". Estos datos reflejan las preferencias de los dueños de mascotas al momento de elegir un nombre para sus compañeros peludos.</p>
+            <p>Este registro nacional proporciona información valiosa sobre la población de mascotas en Chile, así como también sobre las tendencias en cuanto a nombres de animales de compañía. La iniciativa de Ley Duque, en conjunto con estos datos, resalta la importancia de proteger y reconocer el valor de las mascotas en la sociedad chilena.</p>
+
+            <hr>
+            <!--CATEGORÍAS-->
+            <p id="fecha">Categoría:</p>
+            <a id="fecha" href="Categoria-Nacional">Nacional</a>
+            <hr>
+            
+            <!--NOTICIAS RELEVANTES (falta configurar el size de las img para q todo sea uniforme lel)-->
+            <div>
+                <h3>Noticias relevantes</h3>
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                    <div class="col">
+                      <div class="card">
+                        <img id="img-card" src="..\imagenes\noticia_carabinero.png" class="card-img-top" alt="Noticia">
+                        <div class="card-body">
+                            <a href="noticia_carabinero.html" style="color:black"><h5 class="card-title">Amenazas tras arresto de venezolanos en Quinta Normal</h5></a>
+                          <p class="card-text">Amenazas tras arresto de venezolanos en Quinta Normal desatan tensión. Carabineros intensifican seguridad. Arrestados vinculados al homicidio del teniente Emmanuel Sánchez. Indignación en redes sociales.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card">
+                        <img id="img-card" src="..\imagenes\noticia_incendio.webp" class="card-img-top" alt="Noticia">
+                        <div class="card-body">
+                            <a href="..\internacional\noticia_incendio.html" style="color:black"><h5 class="card-title">Incendio en Kowloon, Hong Kong: Cinco Personas Muertas y Decenas de Heridos</h5></a>
+                          <p class="card-text">Un incendio en un edificio residencial en el distrito de Kowloon, Hong Kong, dejó al menos cinco muertos y 33 heridos. El fuego, de categoría tres, fue controlado por los bomberos después de una hora. </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card">
+                        <img id="img-card" src="..\imagenes\noticia_fulbo.jpg" class="card-img-top" alt="Noticia">
+                        <div class="card-body">
+                            <a href="..\deportes\noticia_furbo.html" style="color:black"><h5 class="card-title">Colo Colo cae frente a Fluminense en Copa Libertadores</h5></a>
+                          <p class="card-text">Colo Colo cae 2-1 ante Fluminense en Copa Libertadores. A pesar del empate momentáneo, no pueden evitar la derrota. Con tres puntos, mantienen esperanzas de clasificar.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card">
+                        <img id="img-card" src="..\imagenes\noticia_prestamo.jpg" class="card-img-top" alt="Noticia">
+                        <div class="card-body">
+                            <a href="noticia_prestamo.html" style="color:black"><h5 class="card-title">El Préstamo Solidario durante la pandemia del Covid-19</h5></a>
+                          <p class="card-text">Este, en respuesta estatal a la pandemia, sigue su pago en 2024. Consulta de deuda en el sitio web. Reembolso en cuatro cuotas ajustadas al IPC, variando según año de solicitud.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+        
+
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light mt-5">
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2024 Noticias y Reportajes</p>
+                </div>
+                <div class="col-md-6 text-right">
+                    <p>Contacto: colectivosnoricias@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script>
+        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+            var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+            return new bootstrap.Popover(popoverTriggerEl)
+            })
+    </script>
+</body>
+</html>

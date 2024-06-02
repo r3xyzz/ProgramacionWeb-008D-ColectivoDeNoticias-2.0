@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias y Reportajes</title>
+    <!-- Bootstrap CSS e Iconos-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="staticCSS/estilos.css">
+</head>
+<body>
+    
+    <!-- Navbar -->
+    <nav id="navbar" class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+
+        <div class="container">
+            <a class="navbar-brand" href="http://127.0.0.1:3000/Prog Web 2.0/principal.html#">Colectivos de Noticias</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto navegacion">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="http://127.0.0.1:3000/Prog Web 2.0/principal.html">Inicio</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Noticias
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="http://127.0.0.1:3000/Prog Web 2.0/deportes/noticia_furbo.html">Deportes</a>
+                            <a class="dropdown-item" href="http://127.0.0.1:3000/Prog Web 2.0/internacional/noticia_incendio.html">Internacional</a>
+                            <a class="dropdown-item" href="http://127.0.0.1:3000/Prog Web 2.0/nacional/noticia_carabinero.html">Nacional</a>
+                            <a class="dropdown-item" href="http://127.0.0.1:3000/Prog Web 2.0/politica/noticia_gobierno.html">Política</a>
+                            <a class="dropdown-item" href="http://127.0.0.1:3000/Prog Web 2.0/deportes/noticia_esport.html">E-Sports</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://127.0.0.1:3000/Prog Web 2.0/contacto.html">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://127.0.0.1:3000/Prog Web 2.0/carrito.html">Suscripción</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" style="color:white">
+        .
+    </div>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-6 title-container">
+                <h2>Clima de Hoy</h2>
+            </div>
+            <div class="col-lg-">
+                <div id="weather-info" class="weather-card">
+                    <i id="weather-icon"></i>
+                    <h5 class="city-name">Ciudad: Santiago</h5>
+                    <div class="temperature"></div>
+                    <div class="temperature-description"></div>
+                    <div class="temperature-range"></div>
+                    <p class="card-text text-center">Fecha: <span id="date"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Contenido principal -->
+    <div class="container mt-4">
+        <!-- Carrusel -->
+        <!--https://www.lacuarta.com/espectaculos/noticia/nuevo-romance-aseguran-que-millaray-viera-esta-saliendo-con-un-joven-empresario/6G5QSRIZCRG4BNKXLJH4UMRBRY/-->
+        <!--https://www.lacuarta.com/cronica/noticia/un-hombre-y-una-mujer-mueren-en-un-violento-incendio-en-traiguen/CV7XEJ2YFZAPNF2PNWWT32KRBY/-->
+        <!--https://www.lacuarta.com/tendencias/noticia/como-fue-la-detencion-de-sujeto-que-vandalizo-con-grafitis-la-cupula-del-museo-de-bellas-artes/HDTG2WXHEVDLLG6FY3TLA3AUA4/-->
+        <div id="carouselExampleAutoplaying" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://www.lacuarta.com/resizer/0LlWQKCNkMWJLl3I6WjhqTAtNpU=/0x0:1200x800/1023x682/cloudfront-us-east-1.images.arcpublishing.com/copesa/LUHEWH57WJB3ZB3YXP2Y2MFW2Q.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>¿Nuevo romance?: aseguran que Millaray Viera está saliendo con un “joven empresario”</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://www.lacuarta.com/resizer/Ep4-tBu9RP5W3PsAu2JRUMvTtk8=/1023x682/smart/cloudfront-us-east-1.images.arcpublishing.com/copesa/DBG6UPHGGVGUPDHPTYYUFHFPZQ.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Un hombre y una mujer mueren en un violento incendio en Traiguén</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://www.lacuarta.com/resizer/BY5oJhmL1TH6lLgTj_n5DMGjgkc=/1023x682/smart/cloudfront-us-east-1.images.arcpublishing.com/copesa/GHJ7ZXWQOJDJ3ELIJU63ZFJ25M.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Cómo fue la detención de sujeto que vandalizó con grafitis la cúpula del Museo de Bellas Artes</h5>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        
+        <div class="row mt-4">
+            <!-- Noticias -->
+            <!-- Noticia 1 https://www.24horas.cl/actualidad/nacional/banda-narco-los-trinitario-lavarian-dinero-hasta-con-criptomonedas-->
+            <div class="col-md-6">
+                <h2>Un fallecido y al menos 15 lesionados en accidente en San José de Mariquina</h2>
+                <img src="https://www.24horas.cl/24horas/site/artic/20240407/imag/foto_0000000320240407100245/WhatsApp_Image_2024-04-07_at_08.52.42.jpeg" alt="Imagen de la noticia" class="img-fluid mb-3">
+                <p>Un fallecido y al menos 15 personas lesionadas fue el saldo de un fatal accidente entre un bus de la empresa Tur Bus y un Station Wagon, en la comuna de San José de Mariquina, en la región de Los Ríos.</p>
+                <p>El siniestro ocurrió cerca de las 05:30 horas de este domingo, en el kilómetro 20 de la ruta que une Valdivia con San José de Mariquina. La única víctima fatal del accidente fue identificada por las iniciales M.A.M.R., de 40 años, y sería el conductor de vehículo menor. En tanto, los heridos fueron atendidos por personal de SAMU y posteriormente trasladados a diferentes centros médicos.La ruta permanece cerrada en ambos sentidos, aunque se han establecido desvíos de tráfico.</p>
+                <p>Personal de la Sección de Investigación de Accidentes de Tránsito (SIAT) de Carabineros y el Servicio Médico Legal trabajan en el sitio del suceso para determinar las causas del choque.</p>
+            </div>
+            <!-- Noticia 2 https://www.lacuarta.com/cronica/noticia/un-fallecido-y-15-lesionados-tras-choque-entre-un-bus-de-dos-pisos-y-un-auto-en-la-ruta-que-une-valdivia-con-mariquina/JTS2DCXT2ZG6PFLGNJCAD3P7GE/-->
+            <div class="col-md-6">
+                <h2>Banda narco "Los Trinitario": Lavarían dinero hasta con criptomonedas</h2>
+                <img src="https://www.24horas.cl/24horas/site/artic/20240406/imag/foto_0000001720240406211347/24_CENTRAL_CLEAN.jpeg" alt="Imagen de la noticia" class="img-fluid mb-3">
+                <p>Hasta con criptomonedas lavaban dinero los miembros de la banda de narcotraficantes apodada "Los Trinitarios" que fue capturada este viernes en la Región Metropolitana. Debido al éxito de la operación de la PDI y la Fiscalía, alcaldes piden que la capital sea declarada una macrozona ¿Qué significa esto? .</p>
+            </div>
+
+            <!-- Noticia 3 https://www.lacuarta.com/cronica/noticia/un-fallecido-y-15-lesionados-tras-choque-entre-un-bus-de-dos-pisos-y-un-auto-en-la-ruta-que-une-valdivia-con-mariquina/JTS2DCXT2ZG6PFLGNJCAD3P7GE/-->
+            <div class="col-md-6">
+                <h2>El sorteo del Play-In del MSI 2024 ya se llevó a cabo y Estral Esports tendrá que hacer su debut contra el histórico T1 de Faker.</h2>
+                <img src="imagenes/GLnJRKiXoAA5ZtB.jpg" alt="Imagen de la noticia" class="img-fluid mb-3">
+                <p>Durante la transmisión de la final de la LPL, se definió la primera fase del torneo internacional de LoL y el conjunto latino ya tiene rival.</p>
+                <p>A partir del próximo 1 de mayo, la ciudad de Chengdú, China, se vestirá de gala para recibir un nuevo torneo internacional de League of Legends. En esta oportunidad, un total de 12 equipos arribarán al país asiático para intentar conquistar la corona del Mid Season Invitational. Y esto no es todo, ya que también estará en juego el primer cupo para Worlds, el cual se lo llevará el campeón. Además, la región mejor posicionada también ganará un cupo extra para sus equipos de cara al campeonato mundial. Con este contexto, este sábado se sortearían los grupos del Play-In del MSI 2024, y por supuesto toda Latinoamérica se encontraba pendiente de Estral.</p>
+            </div>
+
+            <!-- Noticia 4 https://www.lacuarta.com/cronica/noticia/un-fallecido-y-15-lesionados-tras-choque-entre-un-bus-de-dos-pisos-y-un-auto-en-la-ruta-que-une-valdivia-con-mariquina/JTS2DCXT2ZG6PFLGNJCAD3P7GE/-->
+            <div class="col-md-6">
+                <h2>Los 5 nombres más comunes de perros y gatos en Chile</h2>
+                <img src="imagenes/Screenshot 2024-04-11 221545.png" alt="Imagen de la noticia" class="img-fluid mb-3">
+                <p>Actualmente hay más de dos millones y medios de perros y gatos registrados.</p>
+                <p>Esta semana en el Congreso se presentó el proyecto de Ley Duque, una propuesta que pretende otorgar un día libre en el trabajo o en el colegio a aquellos que pierden una mascota. Lo anterior muestra cómo los animalitos que viven en casas son integrantes relevantes de la familia. En ese marco, te contamos cuáles son los nombres más comunes de perros y gatos en nuestro país.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light mt-5">
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2024 Noticias y Reportajes</p>
+                </div>
+                <div class="col-md-6 text-right">
+                    <p>Contacto: colectivosnoticias@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS y dependencias -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+    <!-- Script para mostrar el modal automáticamente -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        <!-- Modal de Bootstrap -->
+    <div class="modal" tabindex="-1" id="miModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Anuncio</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Este es un anuncio importante. Pofavor mano paga la Suscripcion no te cuesta nada, asi puedo seguir comprando el vicio papa TEXTO REFERENCIAL 100 PORCIENTO REAL NO FAKE EJEMPLO 2024 PROGRAMACION WEB
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Script para mostrar el modal automáticamente -->
+    <script src="staticJS/PrincipalJS.js"></script>
+    <script src="animaciones.js"></script>
+    
+</body>
+</html>

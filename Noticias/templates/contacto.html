@@ -1,0 +1,97 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="estilos.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="http://127.0.0.1:3000/Prog Web 2.0/principal.html">Colectivos de Noticias</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="http://127.0.0.1:3000/Prog Web 2.0/principal.html">Inicio</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Noticias
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="http://127.0.0.1:3000/Prog Web 2.0/deportes/noticia_furbo.html">Deportes</a>
+                            <a class="dropdown-item" href="http://127.0.0.1:3000/Prog Web 2.0/internacional/noticia_incendio.html">Internacional</a>
+                            <a class="dropdown-item" href="http://127.0.0.1:3000/Prog Web 2.0/nacional/noticia_carabinero.html">Nacional</a>
+                            <a class="dropdown-item" href="http://127.0.0.1:3000/Prog Web 2.0/politica/noticia_gobierno.html">Política</a>
+                            <a class="dropdown-item" href="http://127.0.0.1:3000/Prog Web 2.0/deportes/noticia_esport.html">E-Sports</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://127.0.0.1:3000/Prog Web 2.0/contacto.html">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://127.0.0.1:3000/Prog Web 2.0/carrito.html">Suscripción</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+    </header>
+    <div class="container mt-5 cuerpo-contacto">
+        <h1>Comunicate con nosotros!</h1>
+        <hr>
+        <p>Un grupo de jóvenes estudiantes de periodismo y de comunicación audiovisual, cansados de los medios tradicionales, deciden formar un colectivo de noticias llamado “Caos News”. Cada una de las personas que se une a esta idea, aporta con su experiencia y de esta forma asignan las tareas a cada uno de los integrantes para tratar de cubrir de la mejor forma posible las noticias que están pasando en Chile y el mundo con una mirada fresca y joven.</p>
+        <br>
+        <h3>Contacto</h3>
+        <form id="formularioContacto">
+            <div class="form-group mb-3">
+                <label for="email" class="form-label">Correo electronico:</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Ingresa tu Email">
+            </div>
+            <div class="form-group mb-3">
+                <label for="message" class="form-label">Motivo:</label>
+                <textarea class="form-control" id="message" name="message" rows="3" placeholder="Ingresa el motivo para contactarte con nosotros!"></textarea>
+            </div>
+            <div class="form-group mb-3">
+                <label for="formFile" class="form-label">Archivos adjuntos(*)</label>
+                <input class="form-control" type="file" id="formFile">
+            </div>
+            <button type="button" class="btn btn-primary" id="btnEnviar">Enviar</button>
+            
+        </form>
+    </div>
+    <div class="container cuerpo-contacto">
+        <h4>Información de contacto</h4><br>
+        <b>Email:</b> colectivosnoricias@gmail.com<br><br>
+        <b>Fono:</b> +56 9 1234 5678<br><br>
+        <b>Sede Valparaíso</b>
+        <p>Brasil 2021, Valparaíso</p>
+        <b>Sede Santiago Centro</b>
+        <p>Padre Alonso de Ovalle 1586</p>
+    </div>
+    <footer class="bg-dark text-light mt-5">
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2024 Noticias y Reportajes</p>
+                </div>
+                <div class="col-md-6 text-right">
+                    <p>Contacto: colectivosnoricias@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="animaciones.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
