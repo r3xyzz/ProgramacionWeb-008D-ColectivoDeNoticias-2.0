@@ -1,0 +1,32 @@
+#subtitulo-img{
+    font-size:small;
+    text-align: center;
+}
+#fecha{
+    display:inline;
+    font-size:small;
+    color:grey;
+}
+.imagen-circular{
+    margin-right: 10px;
+    border-radius: 50%;
+    height:30px;
+}
+#autor-noticia{
+    display:inline;
+    float:right;
+}
+#articulo-noticia{
+    margin-top: 80px;
+    margin-left: 10%;
+    max-width: 80%;
+    position:right;
+}
+#img-noticia{
+    width: 100%;
+    min-height: 150px;
+}
+#img-card{
+    width: auto;
+    height: 300px;
+}
