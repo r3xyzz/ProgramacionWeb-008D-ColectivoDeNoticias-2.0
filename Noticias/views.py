@@ -1,5 +1,7 @@
 from django.shortcuts import render
 
+# IMPORTANTE MODELS, VIEWS, TEMPLATES
+
 # Create your views here.
 
 def principal(request):
