@@ -1,5 +1,7 @@
 from django.urls import path
 from . import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.principal, name='principal'),
@@ -7,6 +9,7 @@ urlpatterns = [
     path('contacto', views.contacto, name='contacto'),
     path('logincaosnew', views.logincaosnew, name='logincaosnew'),
     path('FormNoticia', views.FormNoticia, name='FormNoticia'),
+    path('test.html', views.Test, name='test'),
 
     path('noticias/deportes/noticia_esport', views.noticia_esport, name='noticia_esport'),
     path('noticias/deportes/noticia_furbo', views.noticia_furbo, name='noticia_furbo'),
@@ -21,4 +24,4 @@ urlpatterns = [
 
     path('noticias/politica/noticia_diputado', views.noticia_diputado, name='noticia_diputado'),
     path('noticias/politica/noticia_gobierno', views.noticia_gobierno, name='noticia_gobierno'),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

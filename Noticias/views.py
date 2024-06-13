@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Noticia, Carrito, ProductoAdicional, Suscripcion, Categoria, Usuario
 
 # IMPORTANTE MODELS, VIEWS, TEMPLATES
 
@@ -23,6 +24,25 @@ def logincaosnew(request):
 def FormNoticia(request):
     context={}
     return render(request, 'FormNoticia.html', context)
+
+# Pagina de prueba
+def Test(request):
+    noticias = Noticia.objects.all()
+    carritos = Carrito.objects.all()
+    usuarios = Usuario.objects.all()
+    productoAdicionales = ProductoAdicional.objects.all()
+    categorias = Categoria.objects.all()
+    subscripciones = Suscripcion.objects.all()
+
+    context = {
+        "subscripciones": subscripciones,
+        "categorias": categorias,
+        "productoAdicionales": productoAdicionales,
+        "usuarios": usuarios,
+        "carritos": carritos,
+        "noticias": noticias
+    }
+    return render(request, 'test.html', context)
 
 #Importación de las Noticias :-P
 

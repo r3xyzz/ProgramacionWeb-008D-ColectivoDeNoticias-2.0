@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Lista de Ejemplos</h1>
+        <div class="noticias-test">
+            <h2>Lista de Noticias</h2>
+            {% for noticia in noticias %}
+            <div>
+                <h2>{{noticia.titulo_noticia}}</h2> <p>{{noticia.subtitulo_noticia}}</p>
+                <img src="{{noticia.imagen_noticia}}" alt="{{noticia.descImg_noticia}}">
+            </div>
+            {% endfor%}
+        </div>
+        <hr>
+        <div class="carrito-test">
+            <h2>Lista de carritos</h2>
+            {% for carrito in carritos %}
+            <div>
+                <p> <b>Usuario:</b> {{carrito.usuario}}  <b>Nombre en tarjeta:</b> {{carrito.nombre_tarjeta}} </p>
+                <p> <b>Número tarjeta:</b> {{carrito.numero_tarjeta}}  <b>Fecha Expiración:</b> {{carrito.fecha_expiracion}}  <b>CVV:</b> {{carrito.codigo_seguridad}} </p>
+                <p> <b>Dirección:</b> {{carrito.direccion_envio}} <b>Subscripción: </b>{{carrito.suscripcion}} </p>
+                <p> <b>Productos Adicionales:</b> {{carrito.productos_adicionales}} </p>
+                <p> <b>Total:</b> {{carrito.total}} </p>
+            </div>
+            {% endfor%}
+        </div>
+        <hr>
+        <div class="categorias-test">
+            <h2>Lista de categorías</h2>
+            {% for categoria in categorias %}
+            <div>
+                <p> {{categoria.nom_categoria}} </p>
+            </div>
+            {% endfor%}
+        </div>
+        <hr>
+        <div class="producto_adicional-test">
+            <h2>Lista de productos adicionales</h2>
+            {% for productoAdicional in productoAdicionales%}
+            <div>
+                <p> <b>Nombre:</b> {{productoAdicional.nombre}} <b>Precio:</b>{{productoAdicional.precio}} </p>
+            </div>
+            {% endfor%}
+        </div>
+        <hr>
+        <div class="subscripciones-test">
+            <h2>Lista de subscripciones</h2>
+            {% for subscripcion in subscripciones %}
+            <div>
+                <p> {{subscripcion.tipo}} </p> <p> {{subscripcion.precio}} </p>
+            </div>
+            {% endfor%}
+        </div>
+        <hr>
+        <div class="usuarios-test">
+            <h2>Lista de Usuarios</h2>
+            {% for usuario in usuarios%}
+            <div>
+                <p> {{usuario.nom_usu}} </p> <p> {{usuario.contrasenna_usu}} </p>
+            </div>
+            {% endfor%}
+        </div>
+</body>
+</html>
