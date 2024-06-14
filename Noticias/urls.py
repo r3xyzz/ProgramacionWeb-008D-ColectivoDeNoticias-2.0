@@ -24,4 +24,9 @@ urlpatterns = [
 
     path('noticias/politica/noticia_diputado', views.noticia_diputado, name='noticia_diputado'),
     path('noticias/politica/noticia_gobierno', views.noticia_gobierno, name='noticia_gobierno'),
+
+    path('crud', views.crud, name='crud'),
+
+    path('noticiasAdd', views.noticiasAdd, name='noticiasAdd'),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

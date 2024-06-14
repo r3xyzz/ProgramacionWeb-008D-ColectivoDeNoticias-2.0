@@ -84,4 +84,15 @@ def noticia_gobierno(request):
     context={}
     return render(request, 'noticias/politica/noticia_gobierno.html', context)
 
+#Cositas CRUD
+def crud(request):
+    noticias = noticias.objects.all()
+    context = {'noticias': noticias}
+    return render(request, 'test.html',context)
+
+#Noticias SIN TERMINAR- CRUD
+def noticiasAdd(request):
+    if request.method is not "POST":
+
+        return render(request, 'test.html', context)
 

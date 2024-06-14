@@ -64,5 +64,45 @@
             </div>
             {% endfor%}
         </div>
+
+
+
+        <!--cositas mias ola-->
+        <br><br><br><br><br><br>
+        <hr>
+
+
+        <h1>Editar datos Categoria</h1>
+        <br>
+
+        <button type="button">
+            <a href="{% url 'categoriasAdd' %}"> Agregar</a>
+        </button>
+
+        <div id="idMensajes">
+            {% if mensaje %}
+                {{mensaje}}
+            {% endif %}
+        </div>
+
+        <table>
+            {% if alumnos %}
+                <th>Categoria</th>
+                {% for x in categorias %}
+                    <tr>
+                        <td>{{ x.nom_categoria }}</td>
+                        <td> <a href="{% url 'categorias_del' %}">Eliminar</a> </td>
+                        <td> <a href="{% url 'categorias_findEdit' %}">Modificar</a> </td>
+                    </tr>
+                {% endfor %}
+            {% endif %}
+        </table>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('#idMensajes').delay(2000).fadeOut("slow");
+            });
+        </script>
 </body>
 </html>
