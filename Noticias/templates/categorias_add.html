@@ -1,0 +1,25 @@
+{% extends 'Noticias/principal.html' %}
+
+{% block title %}Contactanos ola{% Endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h2 class="text-center mb-4">Formulario CRUD Categoria</h2>
+
+                <form action="" method="POST">
+                    {% csrf_token %}
+
+
+                    {{% form.as_table %}}
+
+                    <input type="submit" name="opcion" values="agregar" class="btn btn-primary">
+                    <a href="{% url 'crud_categorias' %}" class="btn btn-secondary">Volver</a>
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+{% endblock %}  

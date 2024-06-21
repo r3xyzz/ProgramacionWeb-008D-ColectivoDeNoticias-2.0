@@ -85,9 +85,10 @@ def noticia_gobierno(request):
     return render(request, 'noticias/politica/noticia_gobierno.html', context)
 
 #Cositas CRUD
-def crud(request):
-    noticias = noticias.objects.all()
-    context = {'noticias': noticias}
+def crud_categoria(request):
+    categorias = Categoria.objects.all()
+    context = {'categorias': categorias}
+    print("enviado datos categorias_list")
     return render(request, 'test.html',context)
 
 #Noticias SIN TERMINAR- CRUD

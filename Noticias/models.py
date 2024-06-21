@@ -2,13 +2,6 @@ from django.db import models
 
 # Create your models here.
 
-class Usuario(models.Model):
-    nom_usu     = models.CharField(max_length=20, blank=False, null=False)
-    contrasenna_usu = models.CharField(max_length=20, blank=False, null=False)
-
-    def __str__(self):
-        return str(self.nom_usu)
-
 class Categoria(models.Model):
     nom_categoria  = models.CharField(max_length=20) 
     
