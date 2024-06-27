@@ -1,3 +1,5 @@
+{% load static %}
+
 https://www.elmostrador.cl/noticias/deportes/2024/04/07/numero-1-en-karate-de-chile-denuncia-irregularidades-que-la-dejaron-fuera-de-los-panamericanos/
 <html lang="en">
 <head>
@@ -10,28 +12,41 @@ https://www.elmostrador.cl/noticias/deportes/2024/04/07/numero-1-en-karate-de-ch
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-            <div class="container">
-                <a class="navbar-brand" href="#">Colectivos de Noticias</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Noticias</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contacto</a>
-                        </li>
-                        <!-- Agrega más opciones de navegación según tu necesidad -->
-                    </ul>
-                </div>
+    <!-- Navbar -->
+    <nav id="navbar" class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'principal' %}">Colectivos de Noticias</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto navegacion">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'principal' %}">Inicio</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Noticias
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/noticias/deportes/noticia_furbo">Deportes</a>
+                            <a class="dropdown-item" href="/noticias/internacional/noticia_incendio">Internacional</a>
+                            <a class="dropdown-item" href="/noticias/nacional/noticia_carabinero">Nacional</a>
+                            <a class="dropdown-item" href="/noticias/politica/noticia_gobierno">Política</a>
+                            <a class="dropdown-item" href="/noticias/deportes/noticia_esport">E-Sports</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contacto">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/carrito">Suscripción</a>
+                    </li>
+                </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
     </header>
     <div class="cuerpo-noticia">
         <p id="fecha" style="margin-right: 40%;">02/03/2024 - Chile, Valparaíso</p>
