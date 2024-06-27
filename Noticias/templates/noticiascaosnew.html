@@ -8,111 +8,117 @@
     <!-- Bootstrap CSS e Iconos-->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    {% load bootstrap5 %}
-    {% bootstrap_css %}
-    {% bootstrap_javascript %}
-    <!-- Custom CSS -->
+    <!-- Estilos CSS personalizados -->
     <link rel="stylesheet" href="{% static 'staticCSS/estilos.css' %}">
 </head>
 <body>
     
-    <!-- Navbar -->
-    <nav id="navbar" class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-
-        <div class="container">
-            <a class="navbar-brand" href=" ">Colectivos de Noticias</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav ml-auto navegacion">
-                    <li class="nav-item active">
-                        <a class="nav-link" href=" ">Inicio</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Noticias
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="/noticias/deportes/noticia_furbo">Deportes</a>
-                            <a class="dropdown-item" href="/noticias/internacional/noticia_incendio">Internacional</a>
-                            <a class="dropdown-item" href="/noticias/nacional/noticia_carabinero">Nacional</a>
-                            <a class="dropdown-item" href="/noticias/politica/noticia_gobierno">Política</a>
-                            <a class="dropdown-item" href="/noticias/deportes/noticia_esport">E-Sports</a>
-                        </div>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="/contacto">Contacto</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/carrito">Suscripción</a>
-                        </li>
-
-                    <!-- Cuadro de búsqueda -->
-                    <li class="nav-item">
-                        <form class="form-inline my-2 my-lg-0 ml-3" action="/buscar" method="GET">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar" name="q">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-                        </form>
-                    </li>
-                    <!-- Mensaje de bienvenida al usuario -->
-                    <li class="nav-item">
-                        {% if user.is_authenticated %}
-                            <a class="nav-link" href="#">Bienvenido, {{user.username}}</a>
-                        {% else %}
-                            <a class="nav-link" href="{% url 'login' %}">Inicio Sesión</a>
-                        {% endif %}
-                    </li>
-
-                    <!-- Cerrar Sesión -->
-                    <li class="nav-item">
-                        {% if user.is_authenticated %}
-                            <a class="nav-link" href="{% url 'logout' %}">Cerrar Sesión</a>
-                        {% else %}
-                            <a class="nav-link disabled" href="{% url 'logout' %}">Cerrar Sesión</a>
-                        {% endif %}
-                    </li>
-
-                </ul>
-            </div>
+<!-- Navbar -->
+<nav id="navbar" class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'principal' %}">Colectivos de Noticias</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ml-auto navegacion">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'principal' %}">Inicio</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Noticias
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/noticias/deportes/noticia_furbo">Deportes</a>
+                        <a class="dropdown-item" href="/noticias/internacional/noticia_incendio">Internacional</a>
+                        <a class="dropdown-item" href="/noticias/nacional/noticia_carabinero">Nacional</a>
+                        <a class="dropdown-item" href="/noticias/politica/noticia_gobierno">Política</a>
+                        <a class="dropdown-item" href="/noticias/deportes/noticia_esport">E-Sports</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contacto">Contacto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/carrito">Suscripción</a>
+                </li>
+                <!-- Cuadro de búsqueda -->
+                <li class="nav-item">
+                    <form class="form-inline my-2 my-lg-0 ml-3" action="/buscar" method="GET">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar" name="q">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                    </form>
+                </li>
+                <!-- Mensaje de bienvenida al usuario -->
+                <li class="nav-item">
+                    {% if user.is_authenticated %}
+                        <a class="nav-link" href="#">Bienvenido, {{ user.username }}</a>
+                    {% else %}
+                        <a class="nav-link" href="{% url 'login' %}">Inicio Sesión</a>
+                    {% endif %}
+                </li>
+                <!-- Cerrar Sesión -->
+                <li class="nav-item">
+                    {% if user.is_authenticated %}
+                        <a class="nav-link" href="{% url 'logout' %}">Cerrar Sesión</a>
+                    {% else %}
+                        <a class="nav-link disabled" href="{% url 'logout' %}">Cerrar Sesión</a>
+                    {% endif %}
+                </li>
+            </ul>
         </div>
-    </nav>
-    <header>
+    </div>
+</nav>
 
-        <body>
-            <header>
-                <div class="container">
-                    <h1>Noticias de Hoy</h1>
-                </div>
-            </header>
-            <div class="container">
-                <ul>
-                    <li class="news-item">
-                        <h2>Título de la Noticia 1</h2>
+
+    <!-- Contenido principal -->
+    <header>
+        <div class="container">
+            <h1>Noticias de Hoy</h1>
+        </div>
+    </header>
+
+    <div class="container mt-5">
+
+        <div class="container mt-5">
+            <ul class="list-unstyled">
+                <li class="media">
+                    <div class="media-body">
+                        <h5 class="mt-0 mb-1">Título de la Noticia 1</h5>
                         <p>Fecha: 26 de Junio, 2024</p>
                         <p>Breve descripción de la noticia 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio.</p>
                         <a href="#">Leer más</a>
-                    </li>
-                    <li class="news-item">
-                        <h2>Título de la Noticia 2</h2>
+                    </div>
+                </li>
+                <hr>
+                <li class="media my-4">
+                    <div class="media-body">
+                        <h5 class="mt-0 mb-1">Título de la Noticia 2</h5>
                         <p>Fecha: 25 de Junio, 2024</p>
                         <p>Breve descripción de la noticia 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio.</p>
                         <a href="#">Leer más</a>
-                    </li>
-                    <li class="news-item">
-                        <h2>Título de la Noticia 3</h2>
+                    </div>
+                </li>
+                <hr>
+                <li class="media">
+                    <div class="media-body">
+                        <h5 class="mt-0 mb-1">Título de la Noticia 3</h5>
                         <p>Fecha: 24 de Junio, 2024</p>
                         <p>Breve descripción de la noticia 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio.</p>
                         <a href="#">Leer más</a>
-                    </li>
-                </ul>
-            </div>
-        </body>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
 
-    </header>
+ <!-- Bootstrap JS y dependencias -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 
-    
+
 
 </body>
 </html>
