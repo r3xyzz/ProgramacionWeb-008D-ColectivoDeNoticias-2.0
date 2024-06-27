@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 # Create your models here.
 
 class Categoria(models.Model):
@@ -39,7 +39,7 @@ class ProductoAdicional(models.Model):
         return self.nombre
     
 class Carrito(models.Model):
-    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
     nombre_tarjeta = models.CharField(max_length=255)
     numero_tarjeta = models.CharField(max_length=16)
     fecha_expiracion = models.DateField()
@@ -50,4 +50,4 @@ class Carrito(models.Model):
     total = models.DecimalField(max_digits=10, decimal_places=2)
 
     def __str__(self):
-        return f"Carrito de {self.usuario.nom_usu}"
+        return f"Carrito de {self.usuario.username}"
