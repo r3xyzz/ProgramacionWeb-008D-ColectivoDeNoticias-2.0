@@ -34,24 +34,24 @@
         </div>
     </nav>
 
-    <!--NOTICIA-->
+    <!-- NOTICIA -->
     <div class="container" id="articulo-noticia">
         <div id="articulo-noticia">
-            <!--Fecha, ubicación y autor-->
+            <!-- Fecha, ubicación y autor -->
             <p id="fecha">20/04/2024 - Chile</p>
             <div id="autor-noticia">
                 <img class="imagen-circular" alt="Foto de Autor de Noticia" src="https://square-vn.com/app/dscms/assets/images/person-2.jpg">
-                <p id ="fecha">Hecho por:</p>
+                <p id="fecha">Hecho por:</p>
                 <span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="LAURA DONOSO ha hecho 3 artículos en total">
                     <a id="fecha" href="Autor-Laura">Laura Donoso</a>
                 </span>
             </div>
-            <!--Título y Subtítulo-->
+            <!-- Título y Subtítulo -->
             <h3>El Préstamo Solidario durante la pandemia del Covid-19</h3>
             <h6>Guía para el Préstamo Solidario: Consulta, proceso de pago y consideraciones especiales para pensionados durante la pandemia del Covid-19.</h6>
             <hr>
-            <!--Imagen Noticia y Cuerpo-->
-            <img class="img-fluid" id="img-noticia" src="../imagenes/noticia_prestamo.jpg">
+            <!-- Imagen Noticia y Cuerpo -->
+            <img class="img-fluid" id="img-noticia" src="{% static 'imagenes/noticia_prestamo.jpg' %}">
             <p id="subtitulo-img">Fechas, cálculo de cuotas y opciones para pensionados, en el marco del Préstamo Solidario durante la crisis sanitaria por Covid-19.</p>
             <p>El Préstamo Solidario fue un crédito estatal entregado por el Estado durante los años 2020 y 2021 como respuesta a la pandemia del Covid-19, debido a la disminución de ingresos experimentada por diversos trabajadores. Este año continúa el proceso de pago de esta ayuda.</p>
             <h4>Consulta de deuda</h4>
@@ -89,52 +89,52 @@
             <h4>Caso excepcional en pensionados</h4>
             <p>Las personas pensionadas que solicitaron este préstamo podrán reembolsar el monto a la Tesorería General de la República en 48 cuotas mensuales, iguales y sucesivas, expresadas en UF y sin multas ni intereses. Además, el monto a pagar no puede exceder el 5% del monto de la pensión.</p>
             <hr>
-            <!--CATEGORÍAS-->
+            <!-- CATEGORÍAS -->
             <p id="fecha">Categoría:</p>
             <a id="fecha" href="Categoria-Nacional">Nacional</a>
             <hr>
             
-            <!--NOTICIAS RELEVANTES (falta configurar el size de las img para q todo sea uniforme lel)-->
+            <!-- NOTICIAS RELEVANTES -->
             <div>
                 <h3>Noticias relevantes</h3>
                 <div class="row row-cols-1 row-cols-md-2 g-4">
                     <div class="col">
-                      <div class="card">
-                        <img id="img-card" src="..\imagenes\noticia_carabinero.png" class="card-img-top" alt="Noticia">
+                    <div class="card">
+                        <img id="img-card" src="{% static 'imagenes/noticia_carabinero.png' %}" class="card-img-top" alt="Noticia">
                         <div class="card-body">
                             <a href="noticia_carabinero.html" style="color:black"><h5 class="card-title">Amenazas tras arresto de venezolanos en Quinta Normal</h5></a>
-                          <p class="card-text">Amenazas tras arresto de venezolanos en Quinta Normal desatan tensión. Carabineros intensifican seguridad. Arrestados vinculados al homicidio del teniente Emmanuel Sánchez. Indignación en redes sociales.</p>
+                        <p class="card-text">Amenazas tras arresto de venezolanos en Quinta Normal desatan tensión. Carabineros intensifican seguridad. Arrestados vinculados al homicidio del teniente Emmanuel Sánchez. Indignación en redes sociales.</p>
                         </div>
-                      </div>
+                    </div>
                     </div>
                     <div class="col">
-                      <div class="card">
-                        <img id="img-card" src="..\imagenes\noticia_incendio.webp" class="card-img-top" alt="Noticia">
+                    <div class="card">
+                        <img id="img-card" src="{% static 'imagenes/noticia_incendio.webp' %}" class="card-img-top" alt="Noticia">
                         <div class="card-body">
-                            <a href="..\internacional\noticia_incendio.html" style="color:black"><h5 class="card-title">Incendio en Kowloon, Hong Kong: Cinco Personas Muertas y Decenas de Heridos</h5></a>
-                          <p class="card-text">Un incendio en un edificio residencial en el distrito de Kowloon, Hong Kong, dejó al menos cinco muertos y 33 heridos. El fuego, de categoría tres, fue controlado por los bomberos después de una hora. </p>
+                            <a href="../internacional/noticia_incendio.html" style="color:black"><h5 class="card-title">Incendio en Kowloon, Hong Kong: Cinco Personas Muertas y Decenas de Heridos</h5></a>
+                        <p class="card-text">Un incendio en un edificio residencial en el distrito de Kowloon, Hong Kong, dejó al menos cinco muertos y 33 heridos. El fuego, de categoría tres, fue controlado por los bomberos después de una hora. </p>
                         </div>
-                      </div>
+                    </div>
                     </div>
                     <div class="col">
-                      <div class="card">
-                        <img id="img-card" src="..\imagenes\noticia_fulbo.jpg" class="card-img-top" alt="Noticia">
+                    <div class="card">
+                        <img id="img-card" src="{% static 'imagenes/noticia_fulbo.jpg' %}" class="card-img-top" alt="Noticia">
                         <div class="card-body">
-                            <a href="..\deportes\noticia_furbo.html" style="color:black"><h5 class="card-title">Colo Colo cae frente a Fluminense en Copa Libertadores</h5></a>
-                          <p class="card-text">Colo Colo cae 2-1 ante Fluminense en Copa Libertadores. A pesar del empate momentáneo, no pueden evitar la derrota. Con tres puntos, mantienen esperanzas de clasificar.</p>
+                            <a href="../deportes/noticia_furbo.html" style="color:black"><h5 class="card-title">Colo Colo cae frente a Fluminense en Copa Libertadores</h5></a>
+                        <p class="card-text">Colo Colo cae 2-1 ante Fluminense en Copa Libertadores. A pesar del empate momentáneo, no pueden evitar la derrota. Con tres puntos, mantienen esperanzas de clasificar.</p>
                         </div>
-                      </div>
+                    </div>
                     </div>
                     <div class="col">
-                      <div class="card">
-                        <img id="img-card" src="../imagenes\Screenshot 2024-04-11 221545.png" class="card-img-top" alt="Noticia">
+                    <div class="card">
+                        <img id="img-card" src="{% static 'imagenes/Screenshot 2024-04-11 221545.png' %}" class="card-img-top" alt="Noticia">
                         <div class="card-body">
                             <a href="noticia_mascotas.html" style="color:black"><h5 class="card-title">Nombres comunes de perros y gatos en Chile</h5></a>
-                          <p class="card-text">El proyecto de Ley Duque propone otorgar un día libre a quienes pierdan una mascota, destacando el papel significativo de los animales domésticos en las familias. Además, se reporta que hay más de dos millones y medio de perros y gatos registrados en el país.</p>
+                        <p class="card-text">El proyecto de Ley Duque propone otorgar un día libre a quienes pierdan una mascota, destacando el papel significativo de los animales domésticos en las familias. Además, se reporta que hay más de dos millones y medio de perros y gatos registrados en el país.</p>
                         </div>
-                      </div>
                     </div>
-                  </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
