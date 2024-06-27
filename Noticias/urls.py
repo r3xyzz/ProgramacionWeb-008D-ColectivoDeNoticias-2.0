@@ -4,16 +4,22 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
+    # Otras rutas existentes
     path('', views.principal, name='principal'),
     path('carrito', views.carrito, name='carrito'),
     path('contacto', views.contacto, name='contacto'),
-    path('registration/login', views.login, name='login'),
     path('FormNoticia', views.FormNoticia, name='FormNoticia'),
     path('categoriasAdd', views.categoriasAdd, name='categoriasAdd'),
     path('test.html', views.Test, name='test'),
+    path('buscar/', views.buscar_noticias, name='buscar_noticias'),
+    path('noticiascaosnew/', views.noticiascaosnew, name='noticiascaosnew'),
     path('resgistrocaosnew', views.resgistrocaosnew, name='resgistrocaosnew'),
+    
 
+    # Ruta para la búsqueda
+    # path('buscar/', views.buscar, name='buscar'),
 
+    # Otras rutas existentes
     path('noticias/deportes/noticia_esport', views.noticia_esport, name='noticia_esport'),
     path('noticias/deportes/noticia_furbo', views.noticia_furbo, name='noticia_furbo'),
     path('noticias/deportes/noticia_karate', views.noticia_karate, name='noticia_karate'),
@@ -28,11 +34,8 @@ urlpatterns = [
     path('noticias/politica/noticia_diputado', views.noticia_diputado, name='noticia_diputado'),
     path('noticias/politica/noticia_gobierno', views.noticia_gobierno, name='noticia_gobierno'),
 
-
-    
     path('crud_categorias', views.crud_categorias, name='crud_categorias'),
-    path('', views.crud_categorias, name='crud_categorias'),
-
     path('noticiasAdd', views.noticiasAdd, name='noticiasAdd'),
+
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
