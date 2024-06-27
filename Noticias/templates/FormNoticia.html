@@ -50,7 +50,9 @@
 
     <div class="container">
         <h1>Formulario de Noticia</h1>
-        <form action="categoriasAdd">
+        <form action="noticiasAdd" method="POST">
+            {% csrf_token %}
+
           <div class="form-group">
             <label for="titulo">Título de la Noticia</label>
             <input type="text" class="form-control" id="titulo" placeholder="Ingrese el título">
@@ -74,16 +76,16 @@
           </div>
           <div class="form-group">
             <label for="categoria">Categoría de la Noticia</label>
-            <select class="form-control" id="categoria">
-              <option>Deportes</option>
-              <option>Internacional</option>
-              <option>Nacional</option>
-              <option>Política</option>
+            <select class="form-control" name="categoria">
+              {% for categoria in categorias %}
+              <option value="{{ categoria.id }}">{{ categoria.categoria }}</option>
+              {% endfor %}
             </select>
           </div>
-          <button type="submit" class="btn btn-primary" onclick="">Enviar</button>
 
-          <a href="{% url 'noticiasAdd' %}">Agregar</a>
+          <input type="submit" name="opcion" value="Agregar" class="btn btn-primary">
+
+          <a href="{% url 'noticiasAdd' %}">ErmTestdeAgregarPeroEh</a>
         </form>
       </div>
       

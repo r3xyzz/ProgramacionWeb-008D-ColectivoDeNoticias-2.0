@@ -9,6 +9,7 @@ urlpatterns = [
     path('contacto', views.contacto, name='contacto'),
     path('logincaosnew', views.logincaosnew, name='logincaosnew'),
     path('FormNoticia', views.FormNoticia, name='FormNoticia'),
+    path('categoriasAdd', views.categoriasAdd, name='categoriasAdd'),
     path('test.html', views.Test, name='test'),
 
     path('noticias/deportes/noticia_esport', views.noticia_esport, name='noticia_esport'),
@@ -25,7 +26,10 @@ urlpatterns = [
     path('noticias/politica/noticia_diputado', views.noticia_diputado, name='noticia_diputado'),
     path('noticias/politica/noticia_gobierno', views.noticia_gobierno, name='noticia_gobierno'),
 
-    path('crud', views.crud, name='crud'),
+
+    
+    path('crud_categorias', views.crud_categorias, name='crud_categorias'),
+    path('', views.crud_categorias, name='crud_categorias'),
 
     path('noticiasAdd', views.noticiasAdd, name='noticiasAdd'),
 
