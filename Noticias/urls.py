@@ -7,10 +7,11 @@ urlpatterns = [
     path('', views.principal, name='principal'),
     path('carrito', views.carrito, name='carrito'),
     path('contacto', views.contacto, name='contacto'),
-    path('logincaosnew', views.logincaosnew, name='logincaosnew'),
+    path('registration/login', views.login, name='login'),
     path('FormNoticia', views.FormNoticia, name='FormNoticia'),
     path('categoriasAdd', views.categoriasAdd, name='categoriasAdd'),
     path('test.html', views.Test, name='test'),
+
 
     path('noticias/deportes/noticia_esport', views.noticia_esport, name='noticia_esport'),
     path('noticias/deportes/noticia_furbo', views.noticia_furbo, name='noticia_furbo'),

@@ -15,16 +15,19 @@
 <body>
     <div class="container">
         <h2>Login Noticias Caos New</h2>
-        <form action="http://127.0.0.1:3000/Prog%20Web%202.0/principal.html" method="POST" onsubmit="return validateForm()">
-            <div class="form-group">
+        <form method="POST">
+            <!--<div class="form-group">
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" class="form-control" placeholder="Enter username" required>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" class="form-control" placeholder="Enter password" required>
-            </div>
-            <button type="submit" class="btn btn-primary btn-block">Login</button>
+            </div> -->
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <button type="submit" class="btn btn-primary btn-block">Login</button> 
 
             <div class="text-center mt-3">
                 <p>¿Te registraste? <a href="http://127.0.0.1:3000/ProgWeb2/registercaosnew.html">REGISTRARSE</a></p>

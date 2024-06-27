@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Noticia, Carrito, ProductoAdicional, Suscripcion, Categoria
 from django.contrib.auth.models import User
 from .forms import CategoriaForm
+from django.contrib.auth.decorators import login_required
 
 # IMPORTANTE MODELS, VIEWS, TEMPLATES
 
@@ -11,6 +12,7 @@ def principal(request):
     context={}
     return render(request, 'principal.html', context)
 
+@login_required
 def carrito(request):
     context={}
     return render(request, 'carrito.html', context)
@@ -19,9 +21,9 @@ def contacto(request):
     context={}
     return render(request, 'contacto.html', context)
 
-def logincaosnew(request):
+def login(request):
     context={}
-    return render(request, 'logincaosnew.html', context)
+    return render(request, 'registration/login.html', context)
 
 
 #Formularios para agregar datos
