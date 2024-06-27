@@ -67,7 +67,7 @@
             <h6>Tragedia en Kowloon: Incendio fatal deja víctimas y heridos en Hong Kong</h6>
             <hr>
             <!--Imagen Noticia y Cuerpo-->
-            <img class="img-fluid" id="img-noticia" src="..\imagenes\noticia_incendio.webp">
+            <img class="img-fluid" id="img-noticia" src="{% static 'imagenes/noticia_incendio.webp' %}">
             <p id="subtitulo-img">Despliegue de emergencia: Bomberos luchan contra el fuego mientras la comunidad de Kowloon enfrenta el caos y la desesperación</p>
             <p>Decenas de personas fueron llevadas a los hospitales tras ser rescatadas del gran inmueble en llamas en el distrito de Kowloon.</p>
             <p>Un incendio de un edificio residencial del populoso distrito hongkonés de Kowloon que se desató a primera hora de la mañana del miércoles (10.04.2024) se cobró la vida de al menos <b>cinco personas</b> y dejó unos <b>33 heridos</b>.</p>
@@ -91,52 +91,48 @@
                 <h3>Noticias relevantes</h3>
                 <div class="row row-cols-1 row-cols-md-2 g-4">
                     <div class="col">
-                      <div class="card">
-                        <img id="img-card" src="..\imagenes\noticia_carabinero.png" class="card-img-top" alt="Noticia">
+                    <div class="card">
+                        <img id="img-card" src="{% static 'imagenes/noticia_carabinero.png' %}" class="card-img-top" alt="Noticia">
                         <div class="card-body">
                             <a href="..\nacional\noticia_carabinero.html" style="color:black"><h5 class="card-title">Amenazas tras arresto de venezolanos en Quinta Normal</h5></a>
-                          <p class="card-text">Amenazas tras arresto de venezolanos en Quinta Normal desatan tensión. Carabineros intensifican seguridad. Arrestados vinculados al homicidio del teniente Emmanuel Sánchez. Indignación en redes sociales.</p>
+                        <p class="card-text">Amenazas tras arresto de venezolanos en Quinta Normal desatan tensión. Carabineros intensifican seguridad. Arrestados vinculados al homicidio del teniente Emmanuel Sánchez. Indignación en redes sociales.</p>
                         </div>
-                      </div>
+                    </div>
                     </div>
                     <div class="col">
-                      <div class="card">
-                        <img id="img-card" src="../imagenes\noticia_prestamo.jpg" class="card-img-top" alt="Noticia">
+                    <div class="card">
+                        <img id="img-card" src="{% static 'imagenes/noticia_prestamo.jpg' %}" class="card-img-top" alt="Noticia">
                         <div class="card-body">
                             <a href="..\nacional\noticia_prestamo.html" style="color:black"><h5 class="card-title">El Préstamo Solidario durante la pandemia del Covid-19</h5></a>
-                          <p class="card-text">Este, en respuesta estatal a la pandemia, sigue su pago en 2024. Consulta de deuda en el sitio web. Reembolso en cuatro cuotas ajustadas al IPC, variando según año de solicitud.</p>
+                        <p class="card-text">Este, en respuesta estatal a la pandemia, sigue su pago en 2024. Consulta de deuda en el sitio web. Reembolso en cuatro cuotas ajustadas al IPC, variando según año de solicitud.</p>
                         </div>
-                      </div>
+                    </div>
                     </div>
                     <div class="col">
-                      <div class="card">
-                        <img id="img-card" src="..\imagenes\noticia_fulbo.jpg" class="card-img-top" alt="Noticia">
+                    <div class="card">
+                        <img id="img-card" src="{% static 'imagenes/noticia_fulbo.jpg' %}" class="card-img-top" alt="Noticia">
                         <div class="card-body">
                             <a href="..\deportes\noticia_furbo.html" style="color:black"><h5 class="card-title">Colo Colo cae frente a Fluminense en Copa Libertadores</h5></a>
-                          <p class="card-text">Colo Colo cae 2-1 ante Fluminense en Copa Libertadores. A pesar del empate momentáneo, no pueden evitar la derrota. Con tres puntos, mantienen esperanzas de clasificar.</p>
+                        <p class="card-text">Colo Colo cae 2-1 ante Fluminense en Copa Libertadores. A pesar del empate momentáneo, no pueden evitar la derrota. Con tres puntos, mantienen esperanzas de clasificar.</p>
                         </div>
-                      </div>
+                    </div>
                     </div>
                     <div class="col">
-                      <div class="card">
-                        <img id="img-card" src="../imagenes\Screenshot 2024-04-11 221545.png" class="card-img-top" alt="Noticia">
+                    <div class="card">
+                        <img id="img-card" src="{% static 'imagenes/Screenshot 2024-04-11 221545.png' %}" class="card-img-top" alt="Noticia">
                         <div class="card-body">
                             <a href="..\nacional\noticia_mascotas.html" style="color:black"><h5 class="card-title">Nombres comunes de perros y gatos en Chile</h5></a>
-                          <p class="card-text">El proyecto de Ley Duque propone otorgar un día libre a quienes pierdan una mascota, destacando el papel significativo de los animales domésticos en las familias. Además, se reporta que hay más de dos millones y medio de perros y gatos registrados en el país.</p>
+                        <p class="card-text">El proyecto de Ley Duque propone otorgar un día libre a quienes pierdan una mascota, destacando el papel significativo de los animales domésticos en las familias. Además, se reporta que hay más de dos millones y medio de perros y gatos registrados en el país.</p>
                         </div>
-                      </div>
                     </div>
-                  </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    
+<!-- Footer -->
 
-        
-
-
-    <!-- Footer -->
     <footer class="bg-dark text-light mt-5">
         <div class="container py-4">
             <div class="row">

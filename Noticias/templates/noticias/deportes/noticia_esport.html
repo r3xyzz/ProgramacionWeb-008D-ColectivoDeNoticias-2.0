@@ -56,9 +56,9 @@
             <p id="fecha">28/04/2024 - Chile</p>
             <div id="autor-noticia">
                 <img class="imagen-circular" alt="Foto de Autor de Noticia" src="https://square-vn.com/app/dscms/assets/images/person-2.jpg">
-                <p id ="fecha">Hecho por:</p>
+                <p id="fecha">Hecho por:</p>
                 <span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="LAURA DONOSO ha hecho 3 artículos en total">
-                    <a id="fecha" href="Autor-Laura">Laura Donoso</a>
+                    <a id="fecha" href="{% static 'Autor-Laura' %}">Laura Donoso</a>
                 </span>
             </div>
             <!--Título y Subtítulo-->
@@ -66,7 +66,7 @@
             <h6>Estral E-Sports termina eliminado: Una buena ofensiva de parte de Corea deja fuera a Latinoamérica</h6>
             <hr>
             <!--Imagen Noticia y Cuerpo-->
-            <img class="img-fluid" id="img-noticia" src="..\imagenes\GLnJRKiXoAA5ZtB.jpg">
+            <img class="img-fluid" id="img-noticia" src="{% static 'imagenes/GLnJRKiXoAA5ZtB.jpg' %}">
             <p id="subtitulo-img">Esperanza y desafíos: Estral Esports experimentó su primer contratiempo al enfrentarse al formidable equipo T1, que es el actual campeón mundial de LoL.</p>
             <p>Estral perdió ante T1. La noticia no sorprende. Se trata del mejor equipo de la historia en League of Legends, cuatro veces campeón mundial y ganador del último Worlds. Sin embargo, fue otro tipo de derrota para Latinoamérica. A diferencia de lo ocurrido en la mayoría de los torneos internacionales, el representante de la región terminó con la cabeza en alto.</p>
             <p>Por la primera jornada del Grupo A del Mid Season Invitational 2024, que se disputa en China con los mejores equipos del planeta, el conjunto de los argentinos Josedeodo, Ackerman y Snaker, junto a los chilenos Zothve y Cody, cayó por 2-0 y ahora tendrá la chance de seguir con vida por el lower bracket, donde se medirá con los taiwaneses de PSG Talon.</p>
@@ -78,60 +78,57 @@
             <hr>
             <!--CATEGORÍAS-->
             <p id="fecha">Categoría:</p>
-            <a id="fecha" href="Categoria-Deporte">Deporte</a>
+            <a id="fecha" href="{% static 'Categoria-Deporte' %}">Deporte</a>
             <hr>
             
-            <!--NOTICIAS RELEVANTES (falta configurar el size de las img para q todo sea uniforme lel)-->
+            <!--NOTICIAS RELEVANTES-->
             <div>
                 <h3>Noticias relevantes</h3>
                 <div class="row row-cols-1 row-cols-md-2 g-4">
                     <div class="col">
-                      <div class="card">
-                        <img id="img-card" src="..\imagenes\noticia_carabinero.png" class="card-img-top" alt="Noticia">
+                    <div class="card">
+                        <img id="img-card" src="{% static 'imagenes/noticia_carabinero.png' %}" class="card-img-top" alt="Noticia">
                         <div class="card-body">
-                            <a href="..\nacional\noticia_carabinero.html" style="color:black"><h5 class="card-title">Amenazas tras arresto de venezolanos en Quinta Normal</h5></a>
-                          <p class="card-text">Amenazas tras arresto de venezolanos en Quinta Normal desatan tensión. Carabineros intensifican seguridad. Arrestados vinculados al homicidio del teniente Emmanuel Sánchez. Indignación en redes sociales.</p>
+                            <a href="{% static 'nacional/noticia_carabinero.html' %}" style="color:black"><h5 class="card-title">Amenazas tras arresto de venezolanos en Quinta Normal</h5></a>
+                        <p class="card-text">Amenazas tras arresto de venezolanos en Quinta Normal desatan tensión. Carabineros intensifican seguridad. Arrestados vinculados al homicidio del teniente Emmanuel Sánchez. Indignación en redes sociales.</p>
                         </div>
-                      </div>
+                    </div>
                     </div>
                     <div class="col">
-                      <div class="card">
-                        <img id="img-card" src="../imagenes\noticia_prestamo.jpg" class="card-img-top" alt="Noticia">
+                    <div class="card">
+                        <img id="img-card" src="{% static 'imagenes/noticia_prestamo.jpg' %}" class="card-img-top" alt="Noticia">
                         <div class="card-body">
-                            <a href="..\nacional\noticia_prestamo.html" style="color:black"><h5 class="card-title">El Préstamo Solidario durante la pandemia del Covid-19</h5></a>
-                          <p class="card-text">Este, en respuesta estatal a la pandemia, sigue su pago en 2024. Consulta de deuda en el sitio web. Reembolso en cuatro cuotas ajustadas al IPC, variando según año de solicitud.</p>
+                            <a href="{% static 'nacional/noticia_prestamo.html' %}" style="color:black"><h5 class="card-title">El Préstamo Solidario durante la pandemia del Covid-19</h5></a>
+                        <p class="card-text">Este, en respuesta estatal a la pandemia, sigue su pago en 2024. Consulta de deuda en el sitio web. Reembolso en cuatro cuotas ajustadas al IPC, variando según año de solicitud.</p>
                         </div>
-                      </div>
+                    </div>
                     </div>
                     <div class="col">
-                      <div class="card">
-                        <img id="img-card" src="../imagenes\noticia_incendio.webp" class="card-img-top" alt="Noticia">
+                    <div class="card">
+                        <img id="img-card" src="{% static 'imagenes/noticia_incendio.webp' %}" class="card-img-top" alt="Noticia">
                         <div class="card-body">
-                            <a href="..\internacional\noticia_incendio.html" style="color:black"><h5 class="card-title">Incendio en Kowloon, Hong Kong: Cinco Personas Muertas y Decenas de Heridos</h5></a>
-                          <p class="card-text">Un incendio en un edificio residencial en el distrito de Kowloon, Hong Kong, dejó al menos cinco muertos y 33 heridos. El fuego, de categoría tres, fue controlado por los bomberos después de una hora. </p>
+                            <a href="{% static 'internacional/noticia_incendio.html' %}" style="color:black"><h5 class="card-title">Incendio en Kowloon, Hong Kong: Cinco Personas Muertas y Decenas de Heridos</h5></a>
+                        <p class="card-text">Un incendio en un edificio residencial en el distrito de Kowloon, Hong Kong, dejó al menos cinco muertos y 33 heridos. El fuego, de categoría tres, fue controlado por los bomberos después de una hora. </p>
                         </div>
-                      </div>
+                    </div>
                     </div>
                     <div class="col">
-                      <div class="card">
-                        <img id="img-card" src="../imagenes\Screenshot 2024-04-11 221545.png" class="card-img-top" alt="Noticia">
+                    <div class="card">
+                        <img id="img-card" src="{% static 'imagenes/Screenshot 2024-04-11 221545.png' %}" class="card-img-top" alt="Noticia">
                         <div class="card-body">
-                            <a href="..\nacional\noticia_mascotas.html" style="color:black"><h5 class="card-title">Nombres comunes de perros y gatos en Chile</h5></a>
-                          <p class="card-text">El proyecto de Ley Duque propone otorgar un día libre a quienes pierdan una mascota, destacando el papel significativo de los animales domésticos en las familias. Además, se reporta que hay más de dos millones y medio de perros y gatos registrados en el país.</p>
+                            <a href="{% static 'nacional/noticia_mascotas.html' %}" style="color:black"><h5 class="card-title">Nombres comunes de perros y gatos en Chile</h5></a>
+                        <p class="card-text">El proyecto de Ley Duque propone otorgar un día libre a quienes pierdan una mascota, destacando el papel significativo de los animales domésticos en las familias. Además, se reporta que hay más de dos millones y medio de perros y gatos registrados en el país.</p>
                         </div>
-                      </div>
                     </div>
-                  </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    
-
-        
+<!-- Footer -->
 
 
-    <!-- Footer -->
     <footer class="bg-dark text-light mt-5">
         <div class="container py-4">
             <div class="row">
