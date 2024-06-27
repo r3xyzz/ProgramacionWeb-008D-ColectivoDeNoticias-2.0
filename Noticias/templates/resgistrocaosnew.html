@@ -1,21 +1,17 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Noticias Caos New</title>
+    <title>Registro Noticias Caos New</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'staticCSS/loginCSS.css' %}">
-    {% load bootstrap5 %}
-    {% bootstrap_css %}
-    {% bootstrap_javascript %}
+    <link rel="stylesheet" href="staticCSS/registroCSS.css">
 </head>
 <body>
     <div class="container">
-        <h2>Login Noticias Caos New</h2>
-        <form action="http://127.0.0.1:3000/Prog%20Web%202.0/principal.html" method="POST" onsubmit="return validateForm()">
+        <h2>Registro en Noticias Caos New</h2>
+        <form action="/principal" method="POST" onsubmit="return validateForm()">
             <div class="form-group">
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" class="form-control" placeholder="Enter username" required>
@@ -24,19 +20,17 @@
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" class="form-control" placeholder="Enter password" required>
             </div>
-            <button type="submit" class="btn btn-primary btn-block">Login</button>
-
-            <div class="text-center mt-3">
-                <p>¿Te registraste? <a href="http://127.0.0.1:3000/ProgWeb2/registercaosnew.html">REGISTRARSE</a></p>
+            <div class="form-group">
+                <label for="confirm_password">Confirma la Password</label>
+                <input type="password" id="confirm_password" name="confirm_password" class="form-control" placeholder="Confirm password" required>
             </div>
-
+            <button type="submit" class="btn btn-primary btn-block">Register</button>
         </form>
     </div>
 
     <!-- Bootstrap JS (optional, only if you need dropdowns, modals, etc.) -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <script src="{% static 'staticJS/loginJS.js' %}"></script>
-
+    <script src="staticJS/registerJS.js"></script>
 </body>
 </html>
