@@ -1,0 +1,32 @@
+{% load static %}
+<!-- resultados_busqueda.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de Búsqueda</title>
+    <!-- Incluye tus estilos CSS aquí si es necesario -->
+</head>
+<body>
+    <header>
+        <h1>Resultados de Búsqueda</h1>
+        <p>Resultados para: {{ query }}</p>
+    </header>
+    <div class="container">
+        {% if resultados %}
+            <ul>
+                {% for noticia in resultados %}
+                    <li>
+                        <h2>{{ noticia.titulo }}</h2>
+                        <p>{{ noticia.cuerpo }}</p>
+                        <!-- Agrega más detalles de la noticia según tus necesidades -->
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No se encontraron resultados para "{{ query }}".</p>
+        {% endif %}
+    </div>
+</body>
+</html>

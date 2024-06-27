@@ -41,13 +41,14 @@
                             <a class="dropdown-item" href="/noticias/politica/noticia_gobierno">Política</a>
                             <a class="dropdown-item" href="/noticias/deportes/noticia_esport">E-Sports</a>
                         </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/contacto">Contacto</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/carrito">Suscripción</a>
-                    </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contacto">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/carrito">Suscripción</a>
+                        </li>
+
                     <!-- Cuadro de búsqueda -->
                     <li class="nav-item">
                         <form class="form-inline my-2 my-lg-0 ml-3" action="/buscar" method="GET">
@@ -71,6 +72,8 @@
                         {% else %}
                             <a class="nav-link disabled" href="{% url 'logout' %}">Cerrar Sesión</a>
                         {% endif %}
+                    </li>
+
                 </ul>
             </div>
         </div>
@@ -98,9 +101,14 @@
         </div>
     </div>
 
+
+
     <!-- Contenido principal -->
     <div class="container mt-4">
         <!-- Carrusel -->
+        <!--https://www.lacuarta.com/espectaculos/noticia/nuevo-romance-aseguran-que-millaray-viera-esta-saliendo-con-un-joven-empresario/6G5QSRIZCRG4BNKXLJH4UMRBRY/-->
+        <!--https://www.lacuarta.com/cronica/noticia/un-hombre-y-una-mujer-mueren-en-un-violento-incendio-en-traiguen/CV7XEJ2YFZAPNF2PNWWT32KRBY/-->
+        <!--https://www.lacuarta.com/tendencias/noticia/como-fue-la-detencion-de-sujeto-que-vandalizo-con-grafitis-la-cupula-del-museo-de-bellas-artes/HDTG2WXHEVDLLG6FY3TLA3AUA4/-->
         <div id="carouselExampleAutoplaying" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -132,40 +140,88 @@
             </button>
         </div>
 
+        
         <div class="row mt-4">
             <!-- Noticias -->
-            <!-- Noticia 1 -->
+            <!-- Noticia 1 https://www.24horas.cl/actualidad/nacional/banda-narco-los-trinitario-lavarian-dinero-hasta-con-criptomonedas-->
             <div class="col-md-6">
                 <h2>Un fallecido y al menos 15 lesionados en accidente en San José de Mariquina</h2>
                 <img src="https://www.24horas.cl/24horas/site/artic/20240407/imag/foto_0000000320240407100245/WhatsApp_Image_2024-04-07_at_08.52.42.jpeg" alt="Imagen de la noticia" class="img-fluid mb-3">
                 <p>Un fallecido y al menos 15 personas lesionadas fue el saldo de un fatal accidente entre un bus de la empresa Tur Bus y un Station Wagon, en la comuna de San José de Mariquina, en la región de Los Ríos.</p>
-                <p>El siniestro ocurrió cerca de las 05:30 horas de este domingo, en el kilómetro 20 de la ruta que une Valdivia con San José de Mariquina. La única víctima fatal del accidente fue identificada por las iniciales M.A.M.R., de 40 años, y sería el conductor de vehículo menor. En tanto, los heridos fueron atendidos por personal de SAMU y posteriormente trasladados a diferentes centros médicos. La ruta permanece cerrada en ambos sentidos, aunque se han establecido desvíos de tráfico.</p>
+                <p>El siniestro ocurrió cerca de las 05:30 horas de este domingo, en el kilómetro 20 de la ruta que une Valdivia con San José de Mariquina. La única víctima fatal del accidente fue identificada por las iniciales M.A.M.R., de 40 años, y sería el conductor de vehículo menor. En tanto, los heridos fueron atendidos por personal de SAMU y posteriormente trasladados a diferentes centros médicos.La ruta permanece cerrada en ambos sentidos, aunque se han establecido desvíos de tráfico.</p>
                 <p>Personal de la Sección de Investigación de Accidentes de Tránsito (SIAT) de Carabineros y el Servicio Médico Legal trabajan en el sitio del suceso para determinar las causas del choque.</p>
             </div>
-
-            <!-- Noticia 2 -->
+            <!-- Noticia 2 https://www.lacuarta.com/cronica/noticia/un-fallecido-y-15-lesionados-tras-choque-entre-un-bus-de-dos-pisos-y-un-auto-en-la-ruta-que-une-valdivia-con-mariquina/JTS2DCXT2ZG6PFLGNJCAD3P7GE/-->
             <div class="col-md-6">
-                <h2>Niña de tres años falleció tras ser atropellada por su padre en Yumbel</h2>
-                <img src="https://www.24horas.cl/24horas/site/artic/20240623/imag/foto_0000000320230623100014/0M4A8878.JPG" alt="Imagen de la noticia" class="img-fluid mb-3">
-                <p>Un lamentable hecho ocurrió la tarde de este sábado en el sector rural de Tomeco, en la comuna de Yumbel, región del Biobío, cuando una niña de tres años murió tras ser atropellada por un vehículo. El accidente fue protagonizado por el propio padre de la menor, quien realizaba maniobras en el patio de su hogar sin percatarse de la presencia de la niña.</p>
-                <p>La menor fue rápidamente trasladada hasta un centro asistencial cercano, donde se confirmó su fallecimiento. El cuerpo de la niña fue remitido al Servicio Médico Legal (SML) para la autopsia correspondiente, mientras que personal de Carabineros llevó a cabo los peritajes necesarios en el lugar del accidente. El trágico suceso ha conmocionado a la comunidad de Yumbel, que se ha volcado en apoyo a la familia afectada.</p>
+                <h2>Banda narco "Los Trinitario": Lavarían dinero hasta con criptomonedas</h2>
+                <img src="https://www.24horas.cl/24horas/site/artic/20240406/imag/foto_0000001720240406211347/24_CENTRAL_CLEAN.jpeg" alt="Imagen de la noticia" class="img-fluid mb-3">
+                <p>Hasta con criptomonedas lavaban dinero los miembros de la banda de narcotraficantes apodada "Los Trinitarios" que fue capturada este viernes en la Región Metropolitana. Debido al éxito de la operación de la PDI y la Fiscalía, alcaldes piden que la capital sea declarada una macrozona ¿Qué significa esto? .</p>
             </div>
 
-            <!-- Noticia 3 -->
+            <!-- Noticia 3 https://www.lacuarta.com/cronica/noticia/un-fallecido-y-15-lesionados-tras-choque-entre-un-bus-de-dos-pisos-y-un-auto-en-la-ruta-que-une-valdivia-con-mariquina/JTS2DCXT2ZG6PFLGNJCAD3P7GE/-->
             <div class="col-md-6">
-                <h2>Más de 20.000 evacuados y casi 5.000 damnificados: complejo escenario por inundaciones en el norte de Chile</h2>
-                <img src="https://www.24horas.cl/24horas/site/artic/20240623/imag/foto_0000000320230623090026/Inundaciones_norte_Chile.png" alt="Imagen de la noticia" class="img-fluid mb-3">
-                <p>El norte de Chile enfrenta una situación crítica debido a las intensas lluvias que han generado extensas inundaciones en las regiones de Arica y Parinacota, Tarapacá y Antofagasta. Hasta el momento, se reportan más de 20.000 personas evacuadas y cerca de 5.000 damnificadas. Las autoridades han decretado estado de emergencia y trabajan en la implementación de albergues y centros de acopio para los afectados.</p>
-                <p>El Gobierno ha dispuesto el envío de ayuda humanitaria, que incluye alimentos, agua potable, frazadas y kits de higiene, además de personal especializado para apoyar las labores de rescate y asistencia. Las clases han sido suspendidas en las zonas más afectadas, y se han habilitado centros de atención médica para atender a los heridos y enfermos.</p>
-                <p>Las lluvias, que comenzaron el pasado lunes, no muestran signos de cesar, lo que complica aún más la situación. Se espera que continúen en los próximos días, por lo que las autoridades han hecho un llamado a la población a mantenerse informada y a seguir las instrucciones de seguridad para evitar tragedias mayores.</p>
+                <h2>El sorteo del Play-In del MSI 2024 ya se llevó a cabo y Estral Esports tendrá que hacer su debut contra el histórico T1 de Faker.</h2>
+                <img src="{% static 'imagenes/GLnJRKiXoAA5ZtB.jpg' %}" alt="Imagen de la noticia" class="img-fluid mb-3">
+                <p>Durante la transmisión de la final de la LPL, se definió la primera fase del torneo internacional de LoL y el conjunto latino ya tiene rival.</p>
+                <p>A partir del próximo 1 de mayo, la ciudad de Chengdú, China, se vestirá de gala para recibir un nuevo torneo internacional de League of Legends. En esta oportunidad, un total de 12 equipos arribarán al país asiático para intentar conquistar la corona del Mid Season Invitational. Y esto no es todo, ya que también estará en juego el primer cupo para Worlds, el cual se lo llevará el campeón. Además, la región mejor posicionada también ganará un cupo extra para sus equipos de cara al campeonato mundial. Con este contexto, este sábado se sortearían los grupos del Play-In del MSI 2024, y por supuesto toda Latinoamérica se encontraba pendiente de Estral.</p>
+            </div>
+
+            <!-- Noticia 4 https://www.lacuarta.com/cronica/noticia/un-fallecido-y-15-lesionados-tras-choque-entre-un-bus-de-dos-pisos-y-un-auto-en-la-ruta-que-une-valdivia-con-mariquina/JTS2DCXT2ZG6PFLGNJCAD3P7GE/-->
+            <div class="col-md-6">
+                <h2>Los 5 nombres más comunes de perros y gatos en Chile</h2>
+                <img src="{% static 'imagenes/Screenshot 2024-04-11 221545.png' %}" alt="Imagen de la noticia" class="img-fluid mb-3">
+                <p>Actualmente hay más de dos millones y medios de perros y gatos registrados.</p>
+                <p>Esta semana en el Congreso se presentó el proyecto de Ley Duque, una propuesta que pretende otorgar un día libre en el trabajo o en el colegio a aquellos que pierden una mascota. Lo anterior muestra cómo los animalitos que viven en casas son integrantes relevantes de la familia. En ese marco, te contamos cuáles son los nombres más comunes de perros y gatos en nuestro país.</p>
             </div>
         </div>
     </div>
 
-    <!-- Bootstrap JS e Iconos -->
+    <!-- Footer -->
+    <footer class="bg-dark text-light mt-5">
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2024 Noticias y Reportajes</p>
+                </div>
+                <div class="col-md-6 text-right">
+                    <p>Contacto: colectivosnoticias@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS y dependencias -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybBogGzFpm1y7HiIk6i5l/TzCIO2nd3BYMQD2F86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-q2KEOMsETlFGYsVhrK2wF9AuOGCBOzAmvhA2a3zUdyK06rHqfp76CWoNgkXaV0V4" crossorigin="anonymous"></script>
-    <script src="{% static 'staticJS/funciones.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+    <!-- Script para mostrar el modal automáticamente -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        <!-- Modal de Bootstrap -->
+    <div class="modal" tabindex="-1" id="miModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Anuncio</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Este es un anuncio importante. Pofavor mano paga la Suscripcion no te cuesta nada, asi puedo seguir comprando el vicio papa TEXTO REFERENCIAL 100 PORCIENTO REAL NO FAKE EJEMPLO 2024 PROGRAMACION WEB
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Script para mostrar el modal automáticamente -->
+    <script src="{% static 'staticJS/PrincipalJS.js' %}"></script>
+    <script src="{% static 'staticJS/animaciones.js' %}"></script>
+    
 </body>
 </html>

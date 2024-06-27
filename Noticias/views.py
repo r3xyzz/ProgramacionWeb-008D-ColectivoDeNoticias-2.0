@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Noticia, Carrito, ProductoAdicional, Suscripcion, Categoria
 from django.contrib.auth.models import User
 from .forms import CategoriaForm
@@ -24,6 +24,22 @@ def contacto(request):
 def login(request):
     context={}
     return render(request, 'registration/login.html', context)
+
+def resgistrocaosnew(request):
+    context={}
+    return render(request, 'resgistrocaosnew.html', context)
+
+def noticiascaosnew(request):
+    context={}
+    return render(request, 'noticiascaosnew.html', context)
+
+def buscar_noticias(request):
+    query = request.GET.get('q', '').strip()
+    if query:
+        resultados = Noticia.objects.filter(titulo__icontains=query)  # Ejemplo de búsqueda en el campo 'titulo'
+        return render(request, 'resultados_busqueda.html', {'resultados': resultados, 'query': query})
+    else:
+        return redirect('noticiascaosnew')
 
 
 #Formularios para agregar datos
