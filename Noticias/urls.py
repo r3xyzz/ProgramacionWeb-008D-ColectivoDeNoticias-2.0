@@ -11,6 +11,7 @@ urlpatterns = [
     path('FormNoticia', views.FormNoticia, name='FormNoticia'),
     path('categoriasAdd', views.categoriasAdd, name='categoriasAdd'),
     path('test.html', views.Test, name='test'),
+    path('resgistrocaosnew', views.resgistrocaosnew, name='resgistrocaosnew'),
 
 
     path('noticias/deportes/noticia_esport', views.noticia_esport, name='noticia_esport'),

@@ -25,6 +25,10 @@ def login(request):
     context={}
     return render(request, 'registration/login.html', context)
 
+def resgistrocaosnew(request):
+    context={}
+    return render(request, 'resgistrocaosnew.html', context)
+
 
 #Formularios para agregar datos
 def FormNoticia(request):
