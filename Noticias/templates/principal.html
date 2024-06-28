@@ -35,11 +35,11 @@
                             Noticias
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="/noticias/deportes/noticia_furbo">Deportes</a>
-                            <a class="dropdown-item" href="/noticias/internacional/noticia_incendio">Internacional</a>
-                            <a class="dropdown-item" href="/noticias/nacional/noticia_carabinero">Nacional</a>
-                            <a class="dropdown-item" href="/noticias/politica/noticia_gobierno">Política</a>
-                            <a class="dropdown-item" href="/noticias/deportes/noticia_esport">E-Sports</a>
+                            <a class="dropdown-item" href="{% url 'noticia_deporte' %}">Deportes</a>
+                            <a class="dropdown-item" href="{% url 'noticia_incendio' %}">Internacional</a>
+                            <a class="dropdown-item" href="{% url 'noticia_carabinero' %}">Nacional</a>
+                            <a class="dropdown-item" href="{% url 'noticia_gobierno' %}">Política</a>
+                            <a class="dropdown-item" href="{% url 'noticia_esport' %}">E-Sports</a>
                         </div>
 
                         <li class="nav-item">

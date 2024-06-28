@@ -36,7 +36,7 @@ def noticiascaosnew(request):
 def buscar_noticias(request):
     query = request.GET.get('q', '').strip()
     if query:
-        resultados = Noticia.objects.filter(titulo__icontains=query)  # Ejemplo de búsqueda en el campo 'titulo'
+        resultados = Noticia.objects.filter(titulo__icontains=query)
         return render(request, 'resultados_busqueda.html', {'resultados': resultados, 'query': query})
     else:
         return redirect('noticiascaosnew')
