@@ -38,6 +38,7 @@ urlpatterns = [
 
     path('crud_categorias', views.crud_categorias, name='crud_categorias'),
     path('FormNoticia/', views.noticiasAdd, name='formNoticia'),
-
+    path('crudNoticias', views.crudNoticias, name='crudNoticias'),
+    
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

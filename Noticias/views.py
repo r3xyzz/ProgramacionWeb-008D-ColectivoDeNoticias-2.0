@@ -125,6 +125,7 @@ def noticia_gobierno(request):
     return render(request, 'noticias/politica/noticia_gobierno.html', context)
 
 #Cositas CRUD
+
 def crud_categorias(request):
     categorias = Categoria.objects.all()
     context = {'categorias': categorias}
@@ -151,6 +152,13 @@ def categoriasAdd(request):
         form = CategoriaForm()
         context={'form':form}
         return render(request, 'categorias_add.html',context)
+
+#Crud request noticias
+
+def crudNoticias(request):
+    noticias=Noticia.objects.all()
+    context={"noticias":noticias}
+    return render(request, 'noticiascaosnew.html', context)
 
 #Noticias SIN TERMINAR- CRUD
 

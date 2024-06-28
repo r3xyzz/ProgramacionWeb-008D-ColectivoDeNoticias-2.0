@@ -22,6 +22,9 @@
                 <h1 class="mb-4">Listado de Noticias</h1>
                 <a href="{% url 'formNoticia' %}" class="btn btn-primary mb-3">Agregar Noticia</a>
 
+                <a href="{% url 'crudNoticias' %}" class="btn btn-primary mb-3">Actualizar Noticia</a>
+
+
                 <div id="idMensajes">
                     {% if mensajes %}
                         {{ mensaje }}
