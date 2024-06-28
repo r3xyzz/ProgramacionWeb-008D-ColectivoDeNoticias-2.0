@@ -3,10 +3,29 @@ from .models import Noticia, Carrito, ProductoAdicional, Suscripcion, Categoria
 from django.contrib.auth.models import User
 from .forms import CategoriaForm
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import UserCreationForm
 
 # IMPORTANTE MODELS, VIEWS, TEMPLATES
 
 # Create your views here.
+
+def register_view(request):
+    print("DEBUG 1")
+    if request.method == "POST":
+        print("DEBUG 2: POST REQUEST")
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            print("DEBUG 3: FORM VÁLIDO")
+            form.save()
+            return redirect('principal')
+        else:
+            print("DEBUG 4: FORM INVÁLIDO")
+    else:
+        print("DEBUG 5: GET REQUEST")
+        form = UserCreationForm()
+
+    context = {"form": form}
+    return render(request, "resgistrocaosnew.html", context)
 
 def principal(request):
     context={}
@@ -24,10 +43,6 @@ def contacto(request):
 def login(request):
     context={}
     return render(request, 'registration/login.html', context)
-
-def resgistrocaosnew(request):
-    context={}
-    return render(request, 'resgistrocaosnew.html', context)
 
 def noticiascaosnew(request):
     context={}

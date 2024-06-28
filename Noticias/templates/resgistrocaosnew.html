@@ -1,17 +1,15 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro Noticias Caos New</title>
-    <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    
 </head>
 <body>
     <div class="container">
         <h2>Registro en Noticias Caos New</h2>
-        <form action="/principal" method="POST" onsubmit="return validateForm()">
+        <form method="POST"> 
+            {% csrf_token %}
+            {{ form.as_p }}
+            <!--
             <div class="form-group">
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" class="form-control" placeholder="Enter username" required>
@@ -24,13 +22,9 @@
                 <label for="confirm_password">Confirma la Password</label>
                 <input type="password" id="confirm_password" name="confirm_password" class="form-control" placeholder="Confirm password" required>
             </div>
-            <button type="submit" class="btn btn-primary btn-block">Register</button>
+            -->
+            <button type='submit' class="btn btn-primary btn-block">Register</button>
         </form>
     </div>
-
-    <!-- Bootstrap JS (optional, only if you need dropdowns, modals, etc.) -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-
 </body>
 </html>
