@@ -1,9 +1,11 @@
 from django.shortcuts import render, redirect
 from .models import Noticia, Carrito, ProductoAdicional, Suscripcion, Categoria
 from django.contrib.auth.models import User
+from .models import Noticia
 from .forms import CategoriaForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
+from .forms import NoticiaForm
 
 # IMPORTANTE MODELS, VIEWS, TEMPLATES
 
@@ -153,29 +155,18 @@ def categoriasAdd(request):
 #Noticias SIN TERMINAR- CRUD
 
 def noticiasAdd(request):
-    if request.method != "POST":
-        categorias=Categoria.objects.all()
-        context={"categorias":categorias}
-        return render(request, 'FormNoticia.html', context)
-    
+    print("Se llama la función")
+    if request.method == "POST":
+        print("El metodo es post")
+        form = NoticiaForm(request.POST, request.FILES)
+        if form.is_valid():
+            print("Gol de huachipato")
+            form.save()
+            return redirect('principal')
     else:
-        titulo_noticia=request.POST.get('titulo_noticia', False)
-        subtitulo_noticia=request.POST.get('subtitulo_noticia', False)
-        imagen_noticia=request.POST.get('imagen_noticia', False)
-        descImg_noticia=request.POST.get('descImg_noticia', False)
-        cuerpo_noticia=request.POST.get('cuerpo_noticia', False)
-        nom_categoria=request.POST.get('nom_categoria', False)
-            
-        objCategoria=Categoria.objects.get(id = nom_categoria)
-        obj=Noticia.objects.create(  titulo_noticia=titulo_noticia,
-                                    subtitulo_noticia=subtitulo_noticia,
-                                    imagen_noticia=imagen_noticia,
-                                    descImg_noticia=descImg_noticia,
-                                    cuerpo_noticia=cuerpo_noticia,
-                                    nom_categoria=objCategoria,
-                                    )
-        obj.save()
-        context={'mensaje':"Ok, datos grabados..."}
-        return render(request, 'FormNoticia.html', context)
+        form = NoticiaForm()
+    context = {"form": form}
+    return render(request, "FormNoticia.html", context)
+
 
 

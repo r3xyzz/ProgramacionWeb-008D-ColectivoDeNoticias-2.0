@@ -2,14 +2,13 @@ from django.urls import path
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
-from Noticias.views import register_view
+from Noticias.views import register_view, noticiasAdd
 
 urlpatterns = [
     # Otras rutas existentes
     path('', views.principal, name='principal'),
     path('carrito', views.carrito, name='carrito'),
     path('contacto', views.contacto, name='contacto'),
-    path('FormNoticia', views.FormNoticia, name='FormNoticia'),
     path('categoriasAdd', views.categoriasAdd, name='categoriasAdd'),
     path('test.html', views.Test, name='test'),
     path('buscar/', views.buscar_noticias, name='buscar_noticias'),
@@ -38,7 +37,7 @@ urlpatterns = [
     path('noticias/politica/noticia_gobierno', views.noticia_gobierno, name='noticia_gobierno'),
 
     path('crud_categorias', views.crud_categorias, name='crud_categorias'),
-    path('noticiasAdd', views.noticiasAdd, name='noticiasAdd'),
+    path('FormNoticia/', views.noticiasAdd, name='formNoticia'),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

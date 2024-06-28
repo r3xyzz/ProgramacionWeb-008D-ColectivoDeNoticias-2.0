@@ -1,12 +1,15 @@
-from django import forms
 from .models import Categoria
 from django.forms import ModelForm
-
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import User
+from django import forms
+from .models import Noticia
 
 class CategoriaForm(ModelForm):
     class Meta:
         model = Categoria
         fields = ["nom_categoria"]
         labels = {'nom_categoria':'Categoría'}
+
+class NoticiaForm(forms.ModelForm):
+    class Meta:
+        model = Noticia
+        fields = '__all__'
