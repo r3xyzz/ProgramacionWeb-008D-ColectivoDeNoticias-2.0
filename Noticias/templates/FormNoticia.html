@@ -56,30 +56,30 @@
 
           <div class="form-group">
             <label for="titulo">Título de la Noticia</label>
-            <input type="text" class="form-control" id="titulo" placeholder="Ingrese el título">
+            <input type="text" class="form-control" id="titulo" placeholder="Ingrese el título" name="titulo_noticia">
           </div>
           <div class="form-group">
             <label for="subtitulo">Subtítulo de la Noticia</label>
-            <input type="text" class="form-control" id="subtitulo" placeholder="Ingrese el subtítulo">
+            <input type="text" class="form-control" id="subtitulo" placeholder="Ingrese el subtítulo" name="subtitulo_noticia">
           </div>
           <div class="form-group">
             <label for="imagen">Imagen de la Noticia</label>
-            <input type="file" class="form-control-file" id="imagen">
+            <input type="file" class="form-control-file" id="imagen" name="imagen_noticia">
             <img id="image-preview" class="image-preview mt-2" src="#" alt="Preview">
           </div>
           <div class="form-group">
             <label for="descripcion-imagen">Descripción de la Imagen</label>
-            <input type="text" class="form-control" id="descripcion-imagen" placeholder="Ingrese la descripción de la imagen">
+            <input type="text" class="form-control" id="descripcion-imagen" placeholder="Ingrese la descripción de la imagen" name="descImg_noticia">
           </div>
           <div class="form-group">
             <label for="cuerpo-noticia">Cuerpo de la Noticia</label>
-            <textarea class="form-control" id="cuerpo-noticia" rows="5" placeholder="Ingrese el cuerpo de la noticia"></textarea>
+            <textarea class="form-control" id="cuerpo-noticia" rows="5" placeholder="Ingrese el cuerpo de la noticia" name="cuerpo_noticia"></textarea>
           </div>
           <div class="form-group">
             <label for="categoria">Categoría de la Noticia</label>
-            <select class="form-control" name="categoria">
+            <select class="form-control" name="categoria" name="nom_categoria">
               {% for categoria in categorias %}
-              <option value="{{ categoria.id }}">{{ categoria.categoria }}</option>
+              <option value="{{ categoria.id }}">{{ categoria.nom_categoria }}</option>
               {% endfor %}
             </select>
           </div>
