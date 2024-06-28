@@ -161,6 +161,34 @@ def crudNoticias(request):
     context={"noticias":noticias}
     return render(request, 'noticiascaosnew.html', context)
 
+def noticiasEdit(request, pk):
+    try:
+        noticias=Noticia.objects.get(id=pk)
+        context={}
+        if noticias:
+            print("edit encontró la noticia...")
+            if request.method == "POST":
+                print("edit, es un POST")
+                form = NoticiaForm(request.POST, instance=noticias)
+                form.save()
+                mensaje="Bien, datos actualizados..."
+                print(mensaje)
+                context = {'noticia':noticias, 'form':form, 'mensaje':mensaje}
+                return render(request, 'noticias_edit.html', context)
+            else:
+                #no es un POST
+                print("edit, NO es un POST")
+                form = NoticiaForm(instance=noticias)
+                mensaje=""
+                context = {'noticia':noticias, 'form':form, 'mensaje':mensaje}
+                return render(request, 'noticias_edit.html', context)
+    except:
+        print("error, id no existe...")
+        noticias=Noticia.objects.all()
+        mensaje="Error, id no existe"
+        context={'mensaje':mensaje, 'noticia':noticias}
+        return render(request, 'noticias_edit.html', context)
+
 #Noticias SIN TERMINAR- CRUD
 def noticiasAdd(request):
     print("Se llama la función")

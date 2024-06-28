@@ -50,10 +50,10 @@
                                 <td>{{ noticia.titulo_noticia }}</td>
                                 <td>{{ noticia.cuerpo_noticia|truncatewords:20 }}</td>
                                 <td>
-                                    <a href="{% url 'noticia_eliminar' noticia.pk %}" class="btn btn-danger btn-sm">Eliminar</a>
+                                    <a href="{% url 'noticiaDel' noticia.pk %}" class="btn btn-danger btn-sm">Eliminar</a>
                                 </td>
                                 <td>
-                                    <a href="{% url 'noticia_editar' noticia.pk %}" class="btn btn-warning btn-sm">Modificar</a>
+                                    <a href="{% url 'noticiasEdit' noticia.pk %}" class="btn btn-warning btn-sm">Modificar</a>
                                 </td>
                             </tr>
                         {% endfor %}

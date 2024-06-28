@@ -17,7 +17,7 @@ urlpatterns = [
 
     path('noticiaDel/', noticiaDel, name='noticiaDel'),
     
-
+    path('noticiasEdit', views.noticiasEdit, name='noticiasEdit'),
     
 
     # Ruta para la búsqueda
