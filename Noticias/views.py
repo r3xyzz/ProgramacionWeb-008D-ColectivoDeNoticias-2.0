@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Noticia, Carrito, ProductoAdicional, Suscripcion, Categoria
 from django.contrib.auth.models import User
 from .models import Noticia
@@ -46,6 +46,7 @@ def login(request):
     context={}
     return render(request, 'registration/login.html', context)
 
+@login_required
 def noticiascaosnew(request):
     context={}
     return render(request, 'noticiascaosnew.html', context)
@@ -153,7 +154,6 @@ def categoriasAdd(request):
         return render(request, 'categorias_add.html',context)
 
 #Noticias SIN TERMINAR- CRUD
-
 def noticiasAdd(request):
     print("Se llama la función")
     if request.method == "POST":
@@ -167,6 +167,13 @@ def noticiasAdd(request):
         form = NoticiaForm()
     context = {"form": form}
     return render(request, "FormNoticia.html", context)
+
+def noticiaDel(request, id_noticia):
+    noticia = get_object_or_404(Noticia, pk = id_noticia)
+    if request.method == "POST":
+        noticia.delete()
+        return redirect('principal')
+    return render(request, 'noticiascaosnew.html')
 
 
 

@@ -2,7 +2,7 @@ from django.urls import path
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
-from Noticias.views import register_view, noticiasAdd
+from Noticias.views import register_view, noticiasAdd, noticiaDel
 
 urlpatterns = [
     # Otras rutas existentes
@@ -14,6 +14,8 @@ urlpatterns = [
     path('buscar/', views.buscar_noticias, name='buscar_noticias'),
     path('noticiascaosnew/', views.noticiascaosnew, name='noticiascaosnew'),
     path('resgistrocaosnew', register_view, name='resgistrocaosnew'),
+
+    path('noticiaDel/', noticiaDel, name='noticiaDel'),
     
 
     
