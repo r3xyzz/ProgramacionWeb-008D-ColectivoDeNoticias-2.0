@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from .models import Noticia
 from .forms import CategoriaForm
 from django.contrib.auth.decorators import login_required
+from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth.forms import UserCreationForm
 from .forms import NoticiaForm
 
@@ -161,6 +162,7 @@ def crudNoticias(request):
     context={"noticias":noticias}
     return render(request, 'noticiascaosnew.html', context)
 
+@staff_member_required
 def noticiasEdit(request, pk):
     try:
         noticias=Noticia.objects.get(id=pk)
@@ -204,6 +206,8 @@ def noticiasAdd(request):
     context = {"form": form}
     return render(request, "FormNoticia.html", context)
 
+
+@staff_member_required
 def noticiaDel(request, id_noticia):
     mensajes = []
     errores = []
