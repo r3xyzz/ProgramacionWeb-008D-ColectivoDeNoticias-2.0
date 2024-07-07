@@ -205,11 +205,23 @@ def noticiasAdd(request):
     return render(request, "FormNoticia.html", context)
 
 def noticiaDel(request, id_noticia):
-    noticia = get_object_or_404(Noticia, pk = id_noticia)
-    if request.method == "POST":
-        noticia.delete()
-        return redirect('principal')
-    return render(request, 'noticiascaosnew.html')
+    mensajes = []
+    errores = []
+    noticias = Noticia.objects.all()
+    try:
+        noticia = Noticia.objects.get(id = id_noticia)
+        context = {}
+        if noticia:
+            noticia.delete()
+            mensajes.append("datos eliminados")
+            context = {'noticias': noticias, 'mensajes': mensajes, 'errores': errores}
+            return render(request, 'noticiascaosnew.html', context)
+    except:
+            print("asadjkada")
+            noticias = Noticia.objects.all()
+            mensaje = 'error, id no existe'
+            context = {'mensaje':mensaje, 'noticias':noticias}
+            return render(request, 'noticiascaosnew.html', context)
 
 
 

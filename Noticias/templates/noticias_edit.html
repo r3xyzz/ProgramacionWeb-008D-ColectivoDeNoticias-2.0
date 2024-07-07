@@ -28,11 +28,11 @@
                     {% csrf_token %}
 
                     <!-- Campos para ingresar -->
-                    {{ form.as_table }}
+                    {{ form.as_p }}
 
                     <!-- Botón de envío -->
-                    <input type="submit" name="opcion" value="Actualizar" class="btn btn-primary">
-                    <a href="{% url 'crudNoticias' %}" class="btn btn-primary mb-3">Actualizar Noticia</a>
+                    <input type="submit" name="opcion" value="Actualizar" class="btn btn-primary" >
+
                 </form>
                 <br>
                 {% endif %}
