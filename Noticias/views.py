@@ -226,6 +226,93 @@ def noticiaDel(request, id_noticia):
             mensaje = 'error, id no existe'
             context = {'mensaje':mensaje, 'noticias':noticias}
             return render(request, 'noticiascaosnew.html', context)
+    
+
+
+def carritosAddd(request):
+    if request.method != "POST":
+        suscripciones = Suscripcion.objects.all()
+        productos_adicionales = ProductoAdicional.objects.all()
+        context={"suscripciones":suscripciones, "productos_adicionales":productos_adicionales}
+        return render(request, 'carrito.html', context)
+    
+    else:
+        nombre_tarjeta=request.POST["nombre"]
+        numero_tarjeta=request.POST["numero"]
+        fecha_expiracion=request.POST["expiracion"]
+        codigo_seguridad =request.POST["codigo"]
+        direccion_envio =request.POST["direccion"]
+        suscripcion_id=request.POST["subscripcion"]
+        periodicos =request.POST["periodicos"]
+        informacion =request.POST["informacion"]
+        
+        
+        objSuscripcion=Suscripcion.objects.get(id = suscripcion_id)
+        obj=Carrito(  usuario=request.User,
+                                    nombre_tarjeta=nombre_tarjeta,
+                                    numero_tarjeta=numero_tarjeta,
+                                    fecha_expiracion=fecha_expiracion,
+                                    codigo_seguridad=codigo_seguridad,
+                                    direccion_envio=direccion_envio,
+                                    suscripcion=objSuscripcion,
+                                    total=Suscripcion.precio,
+                                    )
+        obj.save()
+
+        if periodicos:
+            producto_periodicos = ProductoAdicional.objects.get(nombre='Recibir Periódicos a Domicilio')
+            obj.productos_adicionales.add(producto_periodicos)
+            obj.total += producto_periodicos.precio
+        if informacion:
+            producto_informacion = ProductoAdicional.objects.get(nombre='Recibir Información por Correo')
+            obj.productos_adicionales.add(producto_informacion)
+
+        obj.save()
+
+        context={'mensaje':"Ok, datos grabados..."}
+        return render(request, 'carrito.html', context)
+        
+@login_required
+def carritosAdd(request):
+    if request.method == 'POST':
+        nombre_tarjeta = request.POST.get('nombre')
+        numero_tarjeta = request.POST.get('numero')
+        fecha_expiracion = request.POST.get('expiracion')
+        codigo_seguridad = request.POST.get('codigo')
+        direccion_envio = request.POST.get('direccion')
+        suscripcion_id = request.POST.get('subscripcion')
+        periodicos = request.POST.get('periodicos')
+        informacion = request.POST.get('informacion')
+        
+        suscripcion = Suscripcion.objects.get(id=suscripcion_id)
+        
+        carrito = Carrito(
+            usuario=request.user,
+            nombre_tarjeta=nombre_tarjeta,
+            numero_tarjeta=numero_tarjeta,
+            fecha_expiracion=fecha_expiracion,
+            codigo_seguridad=codigo_seguridad,
+            direccion_envio=direccion_envio,
+            suscripcion=suscripcion,
+            total=suscripcion.precio
+        )
+        carrito.save()
+        
+        if periodicos == 'on':
+            producto_periodicos = ProductoAdicional.objects.get(nombre='Recibir Periódicos a Domicilio')
+            carrito.productos_adicionales.add(producto_periodicos)
+            carrito.total = carrito.total + producto_periodicos.precio
+        if informacion == 'on':
+            producto_informacion = ProductoAdicional.objects.get(nombre='Recibir Información por Correo')
+            carrito.productos_adicionales.add(producto_informacion)
+        
+        carrito.save()
+        
+    
+    suscripciones = Suscripcion.objects.all()
+    productos_adicionales = ProductoAdicional.objects.all()
+    
+    return render(request, 'carrito.html', {'suscripciones': suscripciones, 'productos_adicionales': productos_adicionales})
 
 
 
