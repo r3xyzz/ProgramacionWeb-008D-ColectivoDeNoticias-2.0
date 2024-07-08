@@ -1,0 +1,164 @@
+{% load static %}
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'staticCSS/estilos.css' %}">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+
+     <!-- Navbar -->
+    <nav id="navbar" class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'principal' %}">Colectivos de Noticias</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto navegacion">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'principal' %}">Inicio</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Noticias
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/noticias/deportes/noticia_furbo">Deportes</a>
+                            <a class="dropdown-item" href="/noticias/internacional/noticia_incendio">Internacional</a>
+                            <a class="dropdown-item" href="/noticias/nacional/noticia_carabinero">Nacional</a>
+                            <a class="dropdown-item" href="/noticias/politica/noticia_gobierno">Política</a>
+                            <a class="dropdown-item" href="/noticias/deportes/noticia_esport">E-Sports</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contacto">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/carrito">Suscripción</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    </header>
+    <div class="container mt-5">
+        <br>
+        <div class="row">
+            <!-- Columna izquierda para los datos de compra -->
+            <div class="col-md-6">
+                <h3>Datos de Compra</h3>
+                <form action="carritosAdd" method="POST">
+                    {% csrf_token %}
+
+                    <div class="form-group">
+                        <label for="nombre">Nombre en la Tarjeta</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="numero">Número de Tarjeta</label>
+                        <input type="text" class="form-control" id="numero" name="numero" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="expiracion">Fecha de Expiración</label>
+                            <input type="date" class="form-control" id="expiracion" name="expiracion" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="codigo">Código de Seguridad (CVV)</label>
+                            <input type="text" class="form-control" id="codigo" name="codigo" required maxlength="3">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="direccion">Dirección de Envío</label>
+                        <textarea class="form-control" id="direccion" rows="3" name="direccion" required></textarea>
+                    </div>
+                
+                    </div>
+                    <!-- Columna central para elegir la suscripción y otras opciones -->
+                    <div class="col-md-1 border-right"></div>
+                    <div class="col-md-5">
+                        <h3>Elegir Subscripción</h3>
+                        {% for suscripcion in suscripciones %}
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="subscripcion" id="{{ suscripcion.tipo }}" value="{{ suscripcion.id }}">
+                            <label class="form-check-label" for="{{ suscripcion.tipo }}">
+                                {{ suscripcion.get_tipo_display }} - ${{ suscripcion.precio }}
+                            </label>
+                        </div>
+                       
+                        {% endfor %}
+                        <br>
+                        <h3>También te puede interesar</h3>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="periodicos" id="periodicos" value="on">
+                            <label class="form-check-label" for="periodicos">
+                                Recibir Periódicos a Domicilio - $6000.00
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="informacion" id="informacion" value="on">
+                            <label class="form-check-label" for="informacion">
+                                Recibir Información por Correo - $0.00
+                            </label>
+                        </div>
+                        <hr>
+                        <br>
+                        <br>
+
+                        <!-- Sección del carrito de compras -->
+                        <h3>Carrito de Compras</h3>
+                        <ul id="carrito" class="list-group">
+                            <!-- Aquí se agregarán los elementos del carrito dinámicamente -->
+                        </ul>
+                        <p id="total">Total: $0</p>
+                        <!-- Botón de pagar, inicialmente deshabilitado -->
+                        <button id="comprarBtn" class="btn btn-primary" data-toggle="modal" data-target="#modalCompra"
+                            disabled>Pagar</button>
+                
+                    <!-- Modal -->
+                    <div class="modal fade" id="modalCompra" tabindex="-1" role="dialog" aria-labelledby="modalCompraTitle"
+                        aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modalCompraTitle">Detalle de la Compra</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>¡Gracias por tu compra!</p>
+                                    <p>Nombre: <span id="nombreModal"></span></p>
+                                    <p>Suscripción: <span id="suscripcionModal"></span></p>
+                                    <p>Total: <span id="totalModal"></span></p>
+                                    <p>¡Disfruta de tu suscripción!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="{% static 'staticJS/carritoJS.js' %}"></script>
+
+</body>
+
+</html>
